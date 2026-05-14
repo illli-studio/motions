@@ -1,0 +1,92 @@
+{
+  "id": "apple-company-intro-premium",
+  "name": "Apple Company Intro Premium",
+  "version": "1.0.0",
+  "mode": "template",
+  "duration": 30,
+  "fps": 30,
+  "resolution": {
+    "width": 1280,
+    "height": 720
+  },
+  "backgroundColor": "#f5f5f7",
+  "dependencies": [
+    "canvas2d",
+    "gsap",
+    "d3",
+    "simplex-noise"
+  ],
+  "assets": {
+    "palette": [
+      "#0071e3",
+      "#30d158",
+      "#ff9f0a",
+      "#bf5af2",
+      "#ff453a"
+    ],
+    "data": {
+      "products": [
+        "Mac 1984",
+        "iPod 2001",
+        "iPhone 2007",
+        "iPad 2010",
+        "Watch 2015"
+      ],
+      "services": [
+        "iOS",
+        "macOS",
+        "iCloud",
+        "App Store",
+        "Music",
+        "Pay"
+      ]
+    },
+    "motifs": [
+      "glass devices",
+      "garage origin",
+      "d3 product timeline",
+      "d3 ecosystem graph",
+      "simplex particle flow",
+      "silicon circuit board"
+    ]
+  },
+  "template": {
+    "layers": [
+      {
+        "id": "apple-story",
+        "name": "Apple story using gsap, d3, simplex-noise, and Canvas compositing",
+        "type": "custom-code",
+        "zIndex": 1,
+        "startTime": 0,
+        "endTime": 30,
+        "visible": true,
+        "opacity": 1,
+        "dependencies": [
+          "canvas2d",
+          "gsap",
+          "d3",
+          "simplex-noise"
+        ],
+        "properties": {
+          "code": "function createRenderer() {\n  var S = {\n    title: \"\\u82f9\\u679c\\u516c\\u53f8\\u7b80\\u4ecb\",\n    subtitle: \"\\u4ece\\u4e2a\\u4eba\\u7535\\u8111\\u5230\\u5168\\u7403\\u6d88\\u8d39\\u79d1\\u6280\\u751f\\u6001\",\n    founded: \"1976 \\u5e74\\uff0c\\u52a0\\u5dde\\u7684\\u8d77\\u70b9\",\n    garage: \"Steve Jobs\\u3001Steve Wozniak \\u4e0e Ronald Wayne \\u5171\\u540c\\u521b\\u7acb Apple\\u3002Apple I \\u548c Apple II \\u8ba9\\u4e2a\\u4eba\\u7535\\u8111\\u5f00\\u59cb\\u8d70\\u5411\\u66f4\\u5e7f\\u6cdb\\u7684\\u4eba\\u7fa4\\u3002\",\n    products: \"Mac\\u3001iPod\\u3001iPhone\\u3001iPad \\u548c Apple Watch \\u4e0d\\u53ea\\u662f\\u4ea7\\u54c1\\u7ebf\\uff0c\\u4e5f\\u4ee3\\u8868\\u4e86\\u4e00\\u6b21\\u6b21\\u4ea4\\u4e92\\u65b9\\u5f0f\\u7684\\u53d8\\u5316\\u3002\",\n    ecosystem: \"\\u5b83\\u7684\\u6838\\u5fc3\\u4f18\\u52bf\\u662f\\u4e00\\u6574\\u5957\\u4f53\\u9a8c\\uff1aiOS\\u3001macOS\\u3001App Store\\u3001iCloud\\u3001Music\\u3001TV+ \\u4e0e\\u652f\\u4ed8\\u670d\\u52a1\\u5f7c\\u6b64\\u8fde\\u63a5\\u3002\",\n    silicon: \"Apple Silicon \\u8ba9\\u6027\\u80fd\\u3001\\u80fd\\u6548\\u548c\\u8f6f\\u786c\\u4ef6\\u6574\\u5408\\u66f4\\u7d27\\u5bc6\\uff0c\\u4e5f\\u8ba9 Apple \\u66f4\\u80fd\\u63a7\\u5236\\u6838\\u5fc3\\u4f53\\u9a8c\\u3002\",\n    values: \"\\u8bbe\\u8ba1\\u3001\\u9690\\u79c1\\u3001\\u5b89\\u5168\\u3001\\u65e0\\u969c\\u788d\\u4e0e\\u7b80\\u6d01\\u4f53\\u9a8c\\uff0c\\u662f Apple \\u957f\\u671f\\u5f3a\\u8c03\\u7684\\u54c1\\u724c\\u5173\\u952e\\u8bcd\\u3002\",\n    closing: \"\\u4e00\\u5bb6\\u4ee5\\u4ea7\\u54c1\\u4f53\\u9a8c\\u3001\\u751f\\u6001\\u534f\\u540c\\u548c\\u8bbe\\u8ba1\\u6587\\u5316\\u95fb\\u540d\\u7684\\u79d1\\u6280\\u516c\\u53f8\"\n  };\n  var productData = [\n    { name: 'Mac', year: 1984, color: '#0071e3', icon: 'desktop' },\n    { name: 'iPod', year: 2001, color: '#ff9f0a', icon: 'music' },\n    { name: 'iPhone', year: 2007, color: '#30d158', icon: 'phone' },\n    { name: 'iPad', year: 2010, color: '#bf5af2', icon: 'tablet' },\n    { name: 'Watch', year: 2015, color: '#ff453a', icon: 'watch' }\n  ];\n  var serviceNodes = [\n    { id: 'iOS', x: -180, y: -122 }, { id: 'macOS', x: 140, y: -136 }, { id: 'iCloud', x: 190, y: 68 },\n    { id: 'App Store', x: -142, y: 126 }, { id: 'Music', x: 6, y: -218 }, { id: 'Pay', x: 56, y: 188 }\n  ];\n  function clamp(v) { return Math.max(0, Math.min(1, v)); }\n  function seg(t, a, b) { return clamp((t - a) / (b - a)); }\n  function out(v) { v = clamp(v); return 1 - Math.pow(1 - v, 3); }\n  function io(v) { v = clamp(v); return v < .5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2; }\n  function pulse(t, s, p) { return .5 + .5 * Math.sin(t * s + p); }\n  function rr(ctx, x, y, w, h, r) { r = Math.min(r, w / 2, h / 2); ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }\n  function txt(ctx, s, x, y, size, weight, color, align) { ctx.fillStyle = color; ctx.font = weight + ' ' + size + 'px Arial, Microsoft YaHei, sans-serif'; ctx.textAlign = align || 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(s, x, y); }\n  function wrap(ctx, s, x, y, max, line, size, weight, color) { ctx.fillStyle = color; ctx.font = weight + ' ' + size + 'px Arial, Microsoft YaHei, sans-serif'; ctx.textAlign = 'left'; var b = ''; for (var i = 0; i < s.length; i++) { var test = b + s[i]; if (ctx.measureText(test).width > max && b) { ctx.fillText(b, x, y); b = s[i]; y += line; } else b = test; } if (b) ctx.fillText(b, x, y); }\n  function alpha(t, a, b) { return out(seg(t, a, a + 1.05)) * (1 - io(seg(t, b - .85, b))); }\n  function E(name) { if (typeof gsap !== 'undefined' && gsap.parseEase) return gsap.parseEase(name); return name === 'expo.out' ? function(v){return v === 1 ? 1 : 1 - Math.pow(2, -10 * v)} : out; }\n  var expo = E('expo.out');\n  var soft = E('power2.inOut');\n  var noise2D = null;\n  if (typeof createNoise2D !== 'undefined') noise2D = createNoise2D(function(){ return .42; });\n  else if (typeof SimplexNoise !== 'undefined') { var sx = new SimplexNoise('ui2v'); noise2D = function(x, y) { return sx.noise2D(x, y); }; }\n  function n2(x, y) { return noise2D ? noise2D(x, y) : Math.sin(x * 12.9898 + y * 78.233) * .5; }\n  function bg(ctx, w, h, t) {\n    var scene = Math.min(4, Math.floor(t / 6));\n    var themes = [['#f7f8fb','#dfe7f3','#ffffff'], ['#080b12','#182235','#2d243d'], ['#eef7ff','#dff4ec','#ffffff'], ['#05070d','#10283a','#03110d'], ['#f7f3ea','#e8f1f1','#ffffff']];\n    var c = themes[scene], g = ctx.createLinearGradient(0, 0, w, h); g.addColorStop(0, c[0]); g.addColorStop(.55, c[1]); g.addColorStop(1, c[2]); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);\n    var rg = ctx.createRadialGradient(w * (.2 + .55 * pulse(t, .2, 0)), h * (.25 + .35 * pulse(t, .17, 2)), 0, w * .55, h * .45, w * .72); rg.addColorStop(0, scene === 1 || scene === 3 ? 'rgba(0,113,227,.30)' : 'rgba(0,113,227,.16)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = rg; ctx.fillRect(0,0,w,h);\n  }\n  function flow(ctx, w, h, t) {\n    ctx.save(); ctx.globalCompositeOperation = 'lighter';\n    for (var i = 0; i < 130; i++) { var seed = i * 17.37; var px = (i * 83 + t * (26 + i % 9 * 5)) % (w + 220) - 110; var base = (i * 47) % h; var py = base + n2(seed * .012, t * .12) * 92; var r = 1.1 + (i % 6) * .42; var rgb = i % 5 === 0 ? '0,113,227' : i % 5 === 1 ? '48,209,88' : i % 5 === 2 ? '255,159,10' : i % 5 === 3 ? '191,90,242' : '255,69,58'; ctx.fillStyle = 'rgba(' + rgb + ',' + (.06 + .19 * pulse(t, 2.2, i)) + ')'; ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2); ctx.fill(); }\n    ctx.restore();\n  }\n  function glass(ctx, x, y, w, h, r, dark) { rr(ctx,x,y,w,h,r); ctx.fillStyle = dark ? 'rgba(255,255,255,.09)' : 'rgba(255,255,255,.62)'; ctx.fill(); ctx.strokeStyle = dark ? 'rgba(255,255,255,.22)' : 'rgba(255,255,255,.88)'; ctx.lineWidth = 1.5; ctx.stroke(); }\n  function icon(ctx, type, x, y, size, color) { ctx.save(); ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = Math.max(2, size * .08); if (type === 'phone') { rr(ctx,x-size*.28,y-size*.44,size*.56,size*.88,size*.12); ctx.stroke(); ctx.beginPath(); ctx.arc(x,y+size*.32,size*.03,0,Math.PI*2); ctx.fill(); } else if (type === 'tablet') { rr(ctx,x-size*.36,y-size*.28,size*.72,size*.56,size*.08); ctx.stroke(); } else if (type === 'watch') { rr(ctx,x-size*.28,y-size*.30,size*.56,size*.60,size*.16); ctx.stroke(); ctx.fillRect(x-size*.16,y-size*.47,size*.32,size*.12); ctx.fillRect(x-size*.16,y+size*.35,size*.32,size*.12); } else if (type === 'music') { ctx.beginPath(); ctx.moveTo(x-size*.05,y-size*.34); ctx.lineTo(x+size*.25,y-size*.42); ctx.lineTo(x+size*.25,y+size*.20); ctx.stroke(); ctx.beginPath(); ctx.arc(x-size*.11,y+size*.25,size*.11,0,Math.PI*2); ctx.fill(); } else { rr(ctx,x-size*.38,y-size*.26,size*.76,size*.46,size*.05); ctx.stroke(); ctx.beginPath(); ctx.moveTo(x-size*.16,y+size*.32); ctx.lineTo(x+size*.16,y+size*.32); ctx.stroke(); } ctx.restore(); }\n  function devices(ctx, w, h, t, dark) { ctx.save(); ctx.translate(w*.67,h*.51); var f = Math.sin(t*1.1)*8; ctx.shadowColor = dark ? 'rgba(0,0,0,.45)' : 'rgba(29,29,31,.22)'; ctx.shadowBlur = 34; glass(ctx,-260,-120+f,128,244,27,dark); glass(ctx,-76,-178-f,338,218,19,dark); glass(ctx,68,74+f*.4,288,84,21,dark); ctx.shadowBlur = 0; icon(ctx,'phone',-196,2+f,64,dark?'#fff':'#1d1d1f'); icon(ctx,'desktop',94,-72-f,82,dark?'#fff':'#1d1d1f'); txt(ctx,'A17',212,6-f,22,'800',dark?'#fff':'#1d1d1f','center'); ctx.restore(); }\n  function title(ctx,w,h,t){ var a=alpha(t,0,6), p=expo(seg(t,0,1.5)); ctx.save(); ctx.globalAlpha=a; ctx.translate(0,(1-p)*42); txt(ctx,S.title,86,176,74,'800','#1d1d1f'); txt(ctx,S.subtitle,90,236,30,'500','#6e6e73'); txt(ctx,'1976 / Cupertino / Hardware + Software + Services',90,296,22,'800','#0071e3'); devices(ctx,w,h,t,false); ctx.restore(); }\n  function garage(ctx,w,h,t){ var a=alpha(t,6,12), p=expo(seg(t,6,7.2)); ctx.save(); ctx.globalAlpha=a; txt(ctx,'01  Origin',84,116,24,'800','#9bd5ff'); txt(ctx,S.founded,84,188,56,'800','#fff'); wrap(ctx,S.garage,86,252,520,36,25,'500','rgba(255,255,255,.82)'); var cx=w*.71, cy=h*.57; ctx.translate((1-p)*36,0); ctx.strokeStyle='rgba(255,255,255,.74)'; ctx.lineWidth=5; glass(ctx,cx-212,cy-120,424,242,10,true); ctx.beginPath(); ctx.moveTo(cx-248,cy-120); ctx.lineTo(cx,cy-288); ctx.lineTo(cx+248,cy-120); ctx.stroke(); ctx.fillStyle='#f2aa4c'; rr(ctx,cx-102,cy-46,204,94,10); ctx.fill(); txt(ctx,'Apple I',cx,cy+10,32,'800','#111','center'); ctx.restore(); }\n  function products(ctx,w,h,t){ var a=alpha(t,12,18); ctx.save(); ctx.globalAlpha=a; txt(ctx,'02  Products',84,112,24,'800','#0071e3'); txt(ctx,'Products that changed habits',84,178,50,'800','#1d1d1f'); wrap(ctx,S.products,86,232,520,34,23,'500','#6e6e73'); var min=1984,max=2015; var xScale = typeof d3 !== 'undefined' && d3.scaleLinear ? d3.scaleLinear().domain([min,max]).range([640,1080]) : function(y){return 640+(y-min)/(max-min)*440}; var y=420; ctx.strokeStyle='rgba(29,29,31,.14)'; ctx.lineWidth=5; ctx.beginPath(); ctx.moveTo(600,y); ctx.lineTo(1120,y); ctx.stroke(); for(var i=0;i<productData.length;i++){ var d=productData[i], p=expo(seg(t,12.4+i*.38,13.6+i*.38)); var x=xScale(d.year), yy=y-p*62; ctx.fillStyle=d.color; ctx.beginPath(); ctx.arc(x,yy,26,0,Math.PI*2); ctx.fill(); icon(ctx,d.icon,x,yy,32,'#fff'); txt(ctx,d.name,x,yy+76,25,'800','#1d1d1f','center'); txt(ctx,String(d.year),x,yy+105,16,'700','#6e6e73','center'); } ctx.restore(); }\n  function eco(ctx,w,h,t){ var a=alpha(t,18,24); ctx.save(); ctx.globalAlpha=a; txt(ctx,'03  Ecosystem',84,112,24,'800','#79ffe1'); txt(ctx,'One ecosystem, many touchpoints',84,178,48,'800','#fff'); wrap(ctx,S.ecosystem,86,234,520,34,23,'500','rgba(255,255,255,.80)'); var cx=w*.72,cy=h*.50; var nodes=serviceNodes; if(typeof d3!=='undefined'&&d3.forceSimulation){ nodes=serviceNodes.map(function(d){return {id:d.id,x:cx+d.x,y:cy+d.y};}); var sim=d3.forceSimulation(nodes).force('center',d3.forceCenter(cx,cy)).force('charge',d3.forceManyBody().strength(-80)).stop(); for(var k=0;k<24;k++)sim.tick(); } ctx.lineWidth=2.5; for(var i=0;i<nodes.length;i++){ var nx=nodes[i].x>500?nodes[i].x:cx+nodes[i].x, ny=nodes[i].y>300?nodes[i].y:cy+nodes[i].y; ctx.strokeStyle='rgba(121,255,225,.26)'; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(nx,ny); ctx.stroke(); } ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(cx,cy,64+pulse(t,2.2,0)*6,0,Math.PI*2); ctx.fill(); txt(ctx,'Apple',cx,cy+8,27,'800','#101820','center'); for(var j=0;j<nodes.length;j++){ var n=nodes[j], x=n.x>500?n.x:cx+n.x, y=n.y>300?n.y:cy+n.y, bob=pulse(t,1.6,j)*10; glass(ctx,x-60,y-23+bob,120,48,12,true); txt(ctx,n.id,x,y+8+bob,18,'800','#fff','center'); } ctx.restore(); }\n  function chip(ctx,w,h,t){ var a=alpha(t,24,30); ctx.save(); ctx.globalAlpha=a; txt(ctx,'04  Silicon / Values',84,112,24,'800','#0071e3'); txt(ctx,'Silicon + design culture',84,178,50,'800','#1d1d1f'); wrap(ctx,S.silicon,86,234,520,34,23,'500','#6e6e73'); wrap(ctx,S.values,86,352,520,34,23,'600','#333'); var cx=w*.72,cy=h*.46; ctx.fillStyle='#1d1d1f'; rr(ctx,cx-138,cy-138,276,276,30); ctx.fill(); ctx.strokeStyle='rgba(0,113,227,.9)'; ctx.lineWidth=5; ctx.stroke(); txt(ctx,'M-series',cx,cy-6,42,'800','#fff','center'); txt(ctx,'Performance / Efficiency',cx,cy+44,18,'700','rgba(255,255,255,.7)','center'); for(var i=0;i<32;i++){ var ang=i/32*Math.PI*2+t*.18; var x1=cx+Math.cos(ang)*155,y1=cy+Math.sin(ang)*155,x2=cx+Math.cos(ang)*(214+pulse(t,2.4,i)*26),y2=cy+Math.sin(ang)*(214+pulse(t,2.4,i)*26); ctx.strokeStyle=i%3===0?'rgba(0,113,227,.55)':i%3===1?'rgba(48,209,88,.50)':'rgba(191,90,242,.48)'; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); } var e=expo(seg(t,27.2,29.4)); ctx.globalAlpha=a*e; txt(ctx,'Apple',w/2,h*.80,54,'800','#1d1d1f','center'); txt(ctx,S.closing,w/2,h*.875,23,'600','#6e6e73','center'); ctx.restore(); }\n  function render(t, context) { var ctx=context.mainContext,w=context.width,h=context.height; bg(ctx,w,h,t); flow(ctx,w,h,t); title(ctx,w,h,t); garage(ctx,w,h,t); products(ctx,w,h,t); eco(ctx,w,h,t); chip(ctx,w,h,t); }\n  return { render: render };\n}"
+        }
+      },
+      {
+        "id": "foreground-light-sweep",
+        "name": "Foreground light sweep",
+        "type": "custom-code",
+        "zIndex": 2,
+        "startTime": 0,
+        "endTime": 30,
+        "visible": true,
+        "opacity": 0.75,
+        "dependencies": [
+          "canvas2d"
+        ],
+        "properties": {
+          "code": "function createRenderer(){function render(t,context){var ctx=context.mainContext,w=context.width,h=context.height;ctx.save();ctx.globalCompositeOperation='screen';var x=((t*95)%(w+520))-260;var g=ctx.createLinearGradient(x,0,x+300,h);g.addColorStop(0,'rgba(255,255,255,0)');g.addColorStop(.5,'rgba(255,255,255,.18)');g.addColorStop(1,'rgba(255,255,255,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.restore();}return{render:render};}"
+        }
+      }
+    ]
+  }
+}
