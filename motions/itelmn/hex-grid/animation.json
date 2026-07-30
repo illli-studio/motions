@@ -1,0 +1,46 @@
+{
+  "id": "hex-grid",
+  "title": "Hex Grid",
+  "description": "Hexagonal grid reveal with staggered cell activation and glow.",
+  "version": "1.0.0",
+  "mode": "template",
+  "duration": 5,
+  "fps": 30,
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "backgroundColor": "#030712",
+  "tags": [
+    "2d",
+    "transition",
+    "3d"
+  ],
+  "template": {
+    "layers": [
+      {
+        "id": "main",
+        "name": "Hex Grid",
+        "type": "custom-code",
+        "zIndex": 1,
+        "startTime": 0,
+        "endTime": 5,
+        "visible": true,
+        "opacity": 1,
+        "dependencies": [
+          "canvas2d",
+          "gsap",
+          "d3"
+        ],
+        "properties": {
+          "dependencies": [
+            "canvas2d",
+            "gsap",
+            "d3"
+          ],
+          "code": "\n  function clamp(v) { return Math.max(0, Math.min(1, v)); }\n  function easeOut(v) { v = clamp(v); return 1 - Math.pow(1 - v, 3); }\n  function easeInOut(v) { v = clamp(v); return v < 0.5 ? 4*v*v*v : 1 - Math.pow(-2*v+2,3)/2; }\n  function easeElastic(v) { v = clamp(v); return v === 0 || v === 1 ? v : Math.pow(2,-10*v)*Math.sin((v*10-0.75)*((2*Math.PI)/3))+1; }\n  function lerp(a,b,t) { return a + (b-a)*t; }\n  function roundedRect(ctx,x,y,w,h,r) {\n    ctx.beginPath();\n    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);\n    ctx.quadraticCurveTo(x+w,y,x+w,y+r);\n    ctx.lineTo(x+w,y+h-r);\n    ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);\n    ctx.lineTo(x+r,y+h);\n    ctx.quadraticCurveTo(x,y+h,x,y+h-r);\n    ctx.lineTo(x,y+r);\n    ctx.quadraticCurveTo(x,y,x+r,y);\n    ctx.closePath();\n  }\n  function drawBg(ctx,w,h,t) {\n    const g = ctx.createLinearGradient(0,0,w,h);\n    g.addColorStop(0,'#030712');\n    g.addColorStop(0.5,'#07172A');\n    g.addColorStop(1,'#15102A');\n    ctx.fillStyle = g; ctx.fillRect(0,0,w,h);\n    ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=0.18;\n    const c1=ctx.createRadialGradient(w*0.2,h*0.15,10,w*0.2,h*0.15,500);\n    c1.addColorStop(0,'#00D4FF'); c1.addColorStop(1,'rgba(0,212,255,0)');\n    ctx.fillStyle=c1; ctx.fillRect(0,0,w,h);\n    const c2=ctx.createRadialGradient(w*0.85,h*0.75,10,w*0.85,h*0.75,550);\n    c2.addColorStop(0,'#B487FF'); c2.addColorStop(1,'rgba(180,135,255,0)');\n    ctx.fillStyle=c2; ctx.fillRect(0,0,w,h);\n    ctx.restore();\n  }\n  function drawGrid(ctx,w,h,t,alpha) {\n    ctx.save(); ctx.globalAlpha=0.07*alpha; ctx.strokeStyle='#DFF6FF';\n    for(let x=-200;x<w+200;x+=80){ ctx.beginPath(); ctx.moveTo(x+(t*14)%80,h*0.1); ctx.lineTo(x-300+(t*14)%80,h); ctx.stroke(); }\n    ctx.restore();\n  }\n\nfunction createRenderer() {\n  function hexPath(ctx,cx,cy,s){\n    ctx.beginPath();\n    for(let i=0;i<6;i++){\n      const a=Math.PI/6+i*Math.PI/3;\n      const x=cx+s*Math.cos(a), y=cy+s*Math.sin(a);\n      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);\n    }\n    ctx.closePath();\n  }\n  function render(t,ctx2) {\n    const ctx=ctx2.mainContext,w=ctx2.width,h=ctx2.height;\n    drawBg(ctx,w,h,t);\n    const size=42, cols=Math.ceil(w/(size*1.75))+2, rows=Math.ceil(h/(size*1.5))+2;\n    const colors=['#00D4FF','#7BD88F','#F2AA4C','#B487FF'];\n    for(let r=0;r<rows;r++){\n      for(let c=0;c<cols;c++){\n        const cx=c*size*1.75+(r%2)*size*0.875, cy=r*size*1.5;\n        const idx=r*cols+c, delay=idx*0.015;\n        const p=easeOut(clamp((t-delay)/0.5));\n        if(p<=0) continue;\n        ctx.save(); ctx.globalAlpha=p*0.7;\n        hexPath(ctx,cx,cy,size*0.9*p);\n        ctx.strokeStyle=colors[idx%4]+'88'; ctx.lineWidth=2; ctx.stroke();\n        if(p>0.8){\n          ctx.globalAlpha=(p-0.8)*3;\n          ctx.fillStyle=colors[idx%4]+'22'; ctx.fill();\n        }\n        ctx.restore();\n      }\n    }\n    ctx.save(); ctx.globalAlpha=easeOut((t-2.5)/1);\n    ctx.textAlign='center'; ctx.font='900 64px Arial,sans-serif'; ctx.fillStyle='#F8FBFF';\n    ctx.fillText('Hex Grid',w/2,h*0.45);\n    ctx.font='600 24px Arial,sans-serif'; ctx.fillStyle='#9CB7CC';\n    ctx.fillText('Structured reveal pattern',w/2,h*0.52);\n    ctx.restore();\n  }\n  return {render};\n}"
+        }
+      }
+    ]
+  }
+}
