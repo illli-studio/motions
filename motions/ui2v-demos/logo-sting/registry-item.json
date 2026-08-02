@@ -1,0 +1,16 @@
+{
+  "name": "logo-sting",
+  "type": "hyperframes:block",
+  "title": "Logo Sting",
+  "description": "Short brand lockup sting with flash and mark pop.",
+  "dimensions": { "width": 1920, "height": 1080 },
+  "duration": 3,
+  "tags": ["logo", "brand", "demo"],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/logo-sting.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
