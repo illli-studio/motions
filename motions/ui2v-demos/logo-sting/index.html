@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Logo Sting</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@500&display=swap");
+      body {
+        margin: 0;
+        background: #050607;
+        color: #fff;
+        font-family: "Bricolage Grotesque", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #050607;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+      }
+      .flash {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(255, 122, 47, 0.35), transparent 55%);
+        opacity: 0;
+      }
+      .mark {
+        width: 180px;
+        height: 180px;
+        border-radius: 42px;
+        background: linear-gradient(145deg, #ff7a2f, #ffb347 45%, #3d8bff);
+        display: grid;
+        place-items: center;
+        font-size: 84px;
+        font-weight: 700;
+        letter-spacing: -0.06em;
+        box-shadow: 0 30px 80px rgba(255, 122, 47, 0.35);
+        opacity: 0;
+        transform: scale(0.4);
+      }
+      .wordmark {
+        margin-top: 36px;
+        text-align: center;
+        opacity: 0;
+      }
+      .wordmark h1 {
+        margin: 0;
+        font-size: 96px;
+        letter-spacing: -0.05em;
+      }
+      .wordmark p {
+        margin: 10px 0 0;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 24px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .burst {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="logo-sting"
+      data-start="0"
+      data-width="1920"
+      data-height="1080"
+      data-duration="3"
+    >
+      <section class="clip" data-start="0" data-duration="3" data-track-index="0">
+        <div class="flash" id="ls-flash"></div>
+        <div class="burst" id="ls-b1" style="left: 880px; top: 420px"></div>
+        <div class="burst" id="ls-b2" style="left: 1040px; top: 500px"></div>
+        <div class="burst" id="ls-b3" style="left: 920px; top: 620px"></div>
+        <div>
+          <div class="mark" id="ls-mark">U</div>
+          <div class="wordmark" id="ls-word">
+            <h1>UI2V</h1>
+            <p>HyperFrames registry</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#ls-flash", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 0.15)
+        .to("#ls-flash", { opacity: 0, duration: 0.55, ease: "power2.in" }, 0.35)
+        .fromTo(
+          "#ls-mark",
+          { scale: 0.35, opacity: 0, rotate: -18 },
+          { scale: 1, opacity: 1, rotate: 0, duration: 0.65, ease: "back.out(1.7)" },
+          0.2,
+        )
+        .fromTo(
+          ["#ls-b1", "#ls-b2", "#ls-b3"],
+          { scale: 0, opacity: 1 },
+          { scale: 8, opacity: 0, duration: 0.7, stagger: 0.05, ease: "power2.out" },
+          0.35,
+        )
+        .fromTo("#ls-word", { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 0.75)
+        .to("#ls-mark", { y: -8, duration: 0.8, yoyo: true, repeat: 1, ease: "sine.inOut" }, 1.4);
+      window.__timelines["logo-sting"] = tl;
+    </script>
+  </body>
+</html>
