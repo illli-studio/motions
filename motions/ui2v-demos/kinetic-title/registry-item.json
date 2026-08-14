@@ -1,0 +1,16 @@
+{
+  "name": "kinetic-title",
+  "type": "hyperframes:block",
+  "title": "Kinetic Title",
+  "description": "Editorial kinetic typography sting.",
+  "dimensions": { "width": 1920, "height": 1080 },
+  "duration": 4,
+  "tags": ["typography", "kinetic", "demo"],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/kinetic-title.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
