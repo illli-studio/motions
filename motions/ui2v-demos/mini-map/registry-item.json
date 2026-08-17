@@ -1,0 +1,16 @@
+{
+  "name": "mini-map",
+  "type": "hyperframes:block",
+  "title": "Mini Map",
+  "description": "Route highlight map with city markers and travel arc.",
+  "dimensions": { "width": 1920, "height": 1080 },
+  "duration": 5,
+  "tags": ["map", "geography", "demo"],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/mini-map.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
