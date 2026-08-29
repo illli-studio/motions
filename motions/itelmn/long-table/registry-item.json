@@ -1,0 +1,23 @@
+{
+  "name": "long-table",
+  "type": "hyperframes:block",
+  "title": "Long Table",
+  "description": "A long table presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 48,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
