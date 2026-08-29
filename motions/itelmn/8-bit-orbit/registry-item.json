@@ -1,0 +1,23 @@
+{
+  "name": "8-bit-orbit",
+  "type": "hyperframes:block",
+  "title": "8 Bit Orbit",
+  "description": "A 8 bit orbit presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 60,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
