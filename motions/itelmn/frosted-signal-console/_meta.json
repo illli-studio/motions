@@ -3,9 +3,15 @@
   "slug": "frosted-signal-console",
   "displayName": "Frosted Signal Console",
   "latest": {
-    "version": "1.0.0",
-    "publishedAt": 1788006167212,
-    "commit": "https://github.com/illli-studio/motions/commit/a778c4c8039667db687d87bb3034bfc6fd719daa"
+    "version": "1.0.2",
+    "publishedAt": 1788007402566,
+    "commit": null
   },
-  "history": []
+  "history": [
+    {
+      "version": "1.0.0",
+      "publishedAt": 1788006167212,
+      "commit": "https://github.com/illli-studio/motions/commit/a778c4c8039667db687d87bb3034bfc6fd719daa"
+    }
+  ]
 }

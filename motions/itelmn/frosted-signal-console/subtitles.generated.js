@@ -5,9 +5,6 @@ document.head.appendChild(__captionStyle);
 const __surfaceStyle = document.createElement('style');
 __surfaceStyle.textContent = '.paper-surface{background:linear-gradient(135deg,#fffdf8,#f4efe5)}.paper-surface:before{background-image:linear-gradient(rgba(45,42,38,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(45,42,38,.08) 1px,transparent 1px);background-size:40px 40px;opacity:.7}.paper-surface:after{content:"";background:radial-gradient(circle at 15% 15%,rgba(255,224,102,.34),transparent 23%),radial-gradient(circle at 86% 78%,rgba(165,216,255,.32),transparent 28%);opacity:1}';
 document.head.appendChild(__surfaceStyle);
-const __visibilityStyle = document.createElement('style');
-__visibilityStyle.textContent = '.scene .note,.scene .poster-mini,.scene .photo-frame,.scene .video-frame,.scene .scene-title,.scene .chapter{opacity:1!important}';
-document.head.appendChild(__visibilityStyle);
 const __glassStyle = document.createElement('style');
 __glassStyle.textContent = '#caption-band .caption{background:rgba(255,255,255,.22)!important;border:1px solid rgba(255,255,255,.72)!important;border-radius:18px!important;box-shadow:0 10px 30px rgba(45,42,38,.18),inset 0 1px 0 rgba(255,255,255,.8)!important;backdrop-filter:blur(18px) saturate(1.35)!important;-webkit-backdrop-filter:blur(18px) saturate(1.35)!important;color:#2d2a26!important}.scene .note,.scene .compare,.scene .poster-mini,.scene .photo-frame,.scene .video-frame,.scene .flow-node{border-radius:24px!important;border:1px solid rgba(255,255,255,.62)!important;box-shadow:0 18px 38px rgba(45,42,38,.16),inset 0 1px 0 rgba(255,255,255,.72)!important;backdrop-filter:blur(16px) saturate(1.28)!important;-webkit-backdrop-filter:blur(16px) saturate(1.28)!important}.scene .yellow{background:linear-gradient(135deg,rgba(255,224,102,.82),rgba(255,210,64,.5))!important}.scene .blue{background:linear-gradient(135deg,rgba(165,216,255,.8),rgba(104,183,240,.46))!important}.scene .pink{background:linear-gradient(135deg,rgba(255,174,189,.78),rgba(245,125,153,.45))!important}.scene .green{background:linear-gradient(135deg,rgba(151,239,174,.8),rgba(88,210,133,.44))!important}.scene .poster-mini,.scene .photo-frame,.scene .video-frame{background:rgba(255,255,255,.48)!important;overflow:hidden!important}.scene .poster-mini img,.scene .photo-frame img,.scene .video-frame video{border-radius:16px!important}.scene .versus{border-radius:50%!important;box-shadow:0 12px 25px rgba(45,42,38,.22),inset 0 1px 0 rgba(255,255,255,.28)!important}';
 document.head.appendChild(__glassStyle);
@@ -33,14 +30,14 @@ if (__oldBackgroundVideo) {
 const __providedBackgroundVideo = document.createElement('video');
 __providedBackgroundVideo.id = 'cinematic-background-video';
 __providedBackgroundVideo.className = 'clip cinematic-video';
-__providedBackgroundVideo.src = 'assets/echoid-background.mp4';
+__providedBackgroundVideo.src = 'assets/background-placeholder.mp4';
 __providedBackgroundVideo.muted = true;
 __providedBackgroundVideo.loop = true;
 __providedBackgroundVideo.autoplay = true;
 __providedBackgroundVideo.playsInline = true;
 __providedBackgroundVideo.preload = 'auto';
 __providedBackgroundVideo.dataset.start = '0';
-__providedBackgroundVideo.dataset.duration = '179.4';
+__providedBackgroundVideo.dataset.duration = '89.7';
 __providedBackgroundVideo.dataset.trackIndex = '30';
 document.querySelector('#root')?.prepend(__providedBackgroundVideo);
 const __providedVideoStyle = document.createElement('style');
@@ -113,387 +110,389 @@ const __cardText = {
 };
 Object.entries(__cardText).forEach(([selector,copy])=>{const node=document.querySelector(selector);if(node)node.textContent=copy});
 const __captionPlacementStyle = document.createElement('style');
-__captionPlacementStyle.textContent = '#caption-band{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;transform:none!important;z-index:50!important;pointer-events:none!important}#caption-band .caption{position:absolute!important;left:50%!important;right:auto!important;top:auto!important;bottom:58px!important;width:max-content!important;max-width:78%!important;box-sizing:border-box!important;height:auto!important;margin:0!important;transform:translateX(-50%)!important;text-align:center!important;line-height:1.25!important;white-space:normal!important;opacity:1!important}';
+__captionPlacementStyle.textContent = '#caption-band{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;transform:none!important;z-index:50!important;pointer-events:none!important}#caption-band .caption{position:absolute!important;left:50%!important;right:auto!important;top:auto!important;bottom:58px!important;width:max-content!important;max-width:78%!important;box-sizing:border-box!important;height:auto!important;margin:0!important;transform:translateX(-50%)!important;text-align:center!important;line-height:1.25!important;white-space:normal!important}';
 document.head.appendChild(__captionPlacementStyle);
 window.__SUBTITLES = [
   {
     "start": 0,
-    "end": 1,
+    "end": 0.5,
     "text": "Hello，大家好"
   },
   {
-    "start": 1,
-    "end": 4.733,
+    "start": 0.5,
+    "end": 2.366,
     "text": "今天这期视频给大家分享一下我最近在做的一个项目"
   },
   {
-    "start": 4.733,
-    "end": 5.633,
+    "start": 2.366,
+    "end": 2.817,
     "text": "叫 UI2V"
   },
   {
-    "start": 6.166,
-    "end": 8.1,
+    "start": 3.083,
+    "end": 4.05,
     "text": "它想解决的问题其实很简单："
   },
   {
-    "start": 8.1,
-    "end": 10.133,
+    "start": 4.05,
+    "end": 5.066,
     "text": "我们平时用 HyperFrames 做动画"
   },
   {
-    "start": 10.133,
-    "end": 12.966,
+    "start": 5.066,
+    "end": 6.483,
     "text": "做完以后经常就是一个文件夹、一个 demo"
   },
   {
-    "start": 13.066,
-    "end": 14.3,
+    "start": 6.533,
+    "end": 7.15,
     "text": "或者一个导出视频"
   },
   {
-    "start": 14.3,
-    "end": 15.333,
+    "start": 7.15,
+    "end": 7.667,
     "text": "看起来是完成了"
   },
   {
-    "start": 15.333,
-    "end": 16.6,
+    "start": 7.667,
+    "end": 8.3,
     "text": "但下次要复用的时候"
   },
   {
-    "start": 16.6,
-    "end": 19.6,
+    "start": 8.3,
+    "end": 9.8,
     "text": "基本又要重新翻文件、找版本、改路径"
   },
   {
-    "start": 19.733,
-    "end": 20.666,
+    "start": 9.867,
+    "end": 10.333,
     "text": "所以我就在想"
   },
   {
-    "start": 20.666,
-    "end": 24.466,
+    "start": 10.333,
+    "end": 12.233,
     "text": "HyperFrames 动画能不能不要只停留在“交付文件”这一步？"
   },
   {
-    "start": 24.566,
-    "end": 26.1,
+    "start": 12.283,
+    "end": 13.05,
     "text": "能不能像前端组件一样"
   },
   {
-    "start": 26.1,
-    "end": 28.4,
+    "start": 13.05,
+    "end": 14.2,
     "text": "有自己的名字、有预览、有版本"
   },
   {
-    "start": 28.4,
-    "end": 30.433,
+    "start": 14.2,
+    "end": 15.216,
     "text": "也能被别人很方便地拿去用？"
   },
   {
-    "start": 30.666,
-    "end": 32.3,
+    "start": 15.333,
+    "end": 16.15,
     "text": "UI2V 做的就是这件事"
   },
   {
-    "start": 32.3,
-    "end": 33.266,
+    "start": 16.15,
+    "end": 16.633,
     "text": "大家可以看到"
   },
   {
-    "start": 33.266,
-    "end": 36.1,
+    "start": 16.633,
+    "end": 18.05,
     "text": "这里每一个 HyperFrames 动画都不只是一个截图"
   },
   {
-    "start": 36.133,
-    "end": 40.033,
+    "start": 18.067,
+    "end": 20.017,
     "text": "它更像一个可以被收藏、被安装、被维护的动画资产"
   },
   {
-    "start": 40.066,
-    "end": 42.166,
+    "start": 20.033,
+    "end": 21.083,
     "text": "你可以先在页面上看它长什么样"
   },
   {
-    "start": 42.166,
-    "end": 43.8,
+    "start": 21.083,
+    "end": 21.9,
     "text": "确认适不适合自己的项目"
   },
   {
-    "start": 43.8,
-    "end": 47.066,
+    "start": 21.9,
+    "end": 23.533,
     "text": "然后再把它带到本地工作流里继续改、继续用"
   },
   {
-    "start": 47.133,
-    "end": 48.5,
+    "start": 23.567,
+    "end": 24.25,
     "text": "这里要说清楚一点"
   },
   {
-    "start": 48.566,
-    "end": 50.833,
+    "start": 24.283,
+    "end": 25.416,
     "text": "UI2V 和 HyperFrames 的关系"
   },
   {
-    "start": 50.933,
-    "end": 53.966,
+    "start": 25.466,
+    "end": 26.983,
     "text": "HyperFrames 负责的是动画本身怎么做出来"
   },
   {
-    "start": 53.966,
-    "end": 57.5,
+    "start": 26.983,
+    "end": 28.75,
     "text": "比如创作、预览、时间线、渲染这些"
   },
   {
-    "start": 57.733,
-    "end": 58.466,
+    "start": 28.866,
+    "end": 29.233,
     "text": "也就是说"
   },
   {
-    "start": 58.466,
-    "end": 61.266,
+    "start": 29.233,
+    "end": 30.633,
     "text": "你真正写动画、调动画、导出视频"
   },
   {
-    "start": 61.366,
-    "end": 63.466,
+    "start": 30.683,
+    "end": 31.733,
     "text": "是在 HyperFrames 这一层完成的"
   },
   {
-    "start": 63.566,
-    "end": 66.066,
+    "start": 31.783,
+    "end": 33.033,
     "text": "而 UI2V 不负责替你创作动画"
   },
   {
-    "start": 66.066,
-    "end": 68.2,
+    "start": 33.033,
+    "end": 34.1,
     "text": "它负责的是动画做完以后怎么办"
   },
   {
-    "start": 68.2,
-    "end": 70.633,
+    "start": 34.1,
+    "end": 35.316,
     "text": "比如一个 HyperFrames 动画做好了"
   },
   {
-    "start": 70.7,
-    "end": 73.733,
+    "start": 35.35,
+    "end": 36.867,
     "text": "UI2V 可以帮你把它整理成一个更规范的包"
   },
   {
-    "start": 73.733,
-    "end": 75.866,
+    "start": 36.867,
+    "end": 37.933,
     "text": "让它有页面、有预览、有版本"
   },
   {
-    "start": 75.866,
-    "end": 77.833,
+    "start": 37.933,
+    "end": 38.916,
     "text": "也能被搜索、安装和更新"
   },
   {
-    "start": 77.933,
-    "end": 78.766,
+    "start": 38.967,
+    "end": 39.383,
     "text": "这样一来"
   },
   {
-    "start": 79.066,
-    "end": 81.033,
+    "start": 39.533,
+    "end": 40.517,
     "text": "HyperFrames 负责“生产动画”，"
   },
   {
-    "start": 81.166,
-    "end": 83.4,
+    "start": 40.583,
+    "end": 41.7,
     "text": "UI2V 负责“让动画流通起来”。"
   },
   {
-    "start": 83.5,
-    "end": 84.566,
+    "start": 41.75,
+    "end": 42.283,
     "text": "对设计师来说"
   },
   {
-    "start": 84.566,
-    "end": 87.333,
+    "start": 42.283,
+    "end": 43.666,
     "text": "你交付的不再是一堆没人敢动的文件夹"
   },
   {
-    "start": 87.333,
-    "end": 91,
+    "start": 43.666,
+    "end": 45.5,
     "text": "而是一个清楚、有结构、可复用的 HyperFrames 动画包"
   },
   {
-    "start": 91.066,
-    "end": 92.366,
+    "start": 45.533,
+    "end": 46.183,
     "text": "对前端团队来说"
   },
   {
-    "start": 92.366,
-    "end": 95.3,
+    "start": 46.183,
+    "end": 47.65,
     "text": "也不用每次都从零开始实现类似的动画"
   },
   {
-    "start": 95.5,
-    "end": 96.6,
+    "start": 47.75,
+    "end": 48.3,
     "text": "看到合适的效果"
   },
   {
-    "start": 96.6,
-    "end": 98.133,
+    "start": 48.3,
+    "end": 49.066,
     "text": "就可以把它接进项目里"
   },
   {
-    "start": 98.133,
-    "end": 100.333,
+    "start": 49.066,
+    "end": 50.166,
     "text": "再根据自己的产品风格做调整"
   },
   {
-    "start": 100.333,
-    "end": 102.133,
+    "start": 50.166,
+    "end": 51.066,
     "text": "对 agent 来说也会更友好"
   },
   {
-    "start": 102.133,
-    "end": 106.7,
+    "start": 51.066,
+    "end": 53.35,
     "text": "因为它不需要猜这个动画入口在哪里、素材在哪里、应该怎么运行"
   },
   {
-    "start": 106.7,
-    "end": 110.2,
+    "start": 53.35,
+    "end": 55.1,
     "text": "UI2V 会把这些东西整理成一套更稳定的格式"
   },
   {
-    "start": 110.333,
-    "end": 113.666,
+    "start": 55.166,
+    "end": 56.833,
     "text": "我觉得这其实是 HyperFrames 工作流里很缺的一环"
   },
   {
-    "start": 113.7,
-    "end": 116.166,
+    "start": 56.85,
+    "end": 58.083,
     "text": "以前我们更关注“怎么把动画做出来”，"
   },
   {
-    "start": 116.166,
-    "end": 117.1,
+    "start": 58.083,
+    "end": 58.55,
     "text": "但做出来以后"
   },
   {
-    "start": 117.1,
-    "end": 120.733,
+    "start": 58.55,
+    "end": 60.367,
     "text": "它怎么被团队发现、怎么被复用、怎么更新、怎么维护"
   },
   {
-    "start": 120.733,
-    "end": 122.666,
+    "start": 60.367,
+    "end": 61.333,
     "text": "这些问题经常是没人管的"
   },
   {
-    "start": 122.666,
-    "end": 125.6,
+    "start": 61.333,
+    "end": 62.8,
     "text": "所以 UI2V 不是要替代 HyperFrames"
   },
   {
-    "start": 125.6,
-    "end": 126.133,
+    "start": 62.8,
+    "end": 63.066,
     "text": "相反"
   },
   {
-    "start": 126.133,
-    "end": 128.433,
+    "start": 63.066,
+    "end": 64.216,
     "text": "它是接在 HyperFrames 后面的那一层"
   },
   {
-    "start": 128.533,
-    "end": 130.5,
+    "start": 64.266,
+    "end": 65.25,
     "text": "HyperFrames 把动画做出来"
   },
   {
-    "start": 130.566,
-    "end": 135.5,
+    "start": 65.283,
+    "end": 67.75,
     "text": "UI2V 让这些动画可以被搜索、预览、安装、复用和长期维护"
   },
   {
-    "start": 135.666,
-    "end": 139.6,
+    "start": 67.833,
+    "end": 69.8,
     "text": "你可以把它理解成一个专门给 HyperFrames 动画准备的素材库"
   },
   {
-    "start": 139.6,
-    "end": 142,
+    "start": 69.8,
+    "end": 71,
     "text": "也可以理解成一个动画包的分发系统"
   },
   {
-    "start": 142,
-    "end": 145,
+    "start": 71,
+    "end": 72.5,
     "text": "只要一个 HyperFrames 动画被整理进 UI2V"
   },
   {
-    "start": 145,
-    "end": 147.366,
+    "start": 72.5,
+    "end": 73.683,
     "text": "它就不再只是某个项目里的临时产物"
   },
   {
-    "start": 147.366,
-    "end": 149.966,
+    "start": 73.683,
+    "end": 74.983,
     "text": "而是可以被团队持续使用的动画资产"
   },
   {
-    "start": 149.966,
-    "end": 152.366,
+    "start": 74.983,
+    "end": 76.183,
     "text": "目前这个项目还在比较早期的阶段"
   },
   {
-    "start": 152.366,
-    "end": 154.166,
+    "start": 76.183,
+    "end": 77.083,
     "text": "但核心思路已经跑通了："
   },
   {
-    "start": 154.166,
-    "end": 156.666,
+    "start": 77.083,
+    "end": 78.333,
     "text": "把 HyperFrames 动画从一次性的交付"
   },
   {
-    "start": 156.666,
-    "end": 158.466,
+    "start": 78.333,
+    "end": 79.233,
     "text": "变成可以长期积累的东西"
   },
   {
-    "start": 158.733,
-    "end": 160.5,
+    "start": 79.367,
+    "end": 80.25,
     "text": "后面我也会继续完善它"
   },
   {
-    "start": 160.5,
-    "end": 165.333,
+    "start": 80.25,
+    "end": 82.666,
     "text": "比如更好的展示页、更完整的动画包检查、更顺滑的安装和更新体验"
   },
   {
-    "start": 165.333,
-    "end": 167.3,
+    "start": 82.666,
+    "end": 83.65,
     "text": "以及和 HyperFrames 的配合"
   },
   {
-    "start": 167.333,
-    "end": 170.166,
+    "start": 83.666,
+    "end": 85.083,
     "text": "如果你平时也会用 HyperFrames 做很多动画"
   },
   {
-    "start": 170.166,
-    "end": 173.3,
+    "start": 85.083,
+    "end": 86.65,
     "text": "或者你希望团队里的动画不要每次都从零开始"
   },
   {
-    "start": 173.3,
-    "end": 175.833,
+    "start": 86.65,
+    "end": 87.916,
     "text": "那 UI2V 这个方向应该会很有意思"
   },
   {
-    "start": 176,
-    "end": 178.133,
+    "start": 88,
+    "end": 89.067,
     "text": "好，今天这个项目分享就到这里"
   },
   {
-    "start": 178.133,
-    "end": 179.4,
+    "start": 89.067,
+    "end": 89.7,
     "text": "谢谢大家，拜拜"
   }
 ];
+
+
