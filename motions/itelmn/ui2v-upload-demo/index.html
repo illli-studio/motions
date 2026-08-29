@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>UI2V Upload Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@500&display=swap");
+
+      body {
+        margin: 0;
+        background: #07090d;
+        color: #f4f1ea;
+        font-family: "Bricolage Grotesque", sans-serif;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse 70% 55% at 30% 35%, rgba(61, 139, 255, 0.22), transparent 60%),
+          radial-gradient(ellipse 60% 50% at 75% 70%, rgba(255, 122, 47, 0.18), transparent 55%),
+          #07090d;
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+      }
+
+      .halo {
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0;
+      }
+
+      .badge {
+        position: relative;
+        z-index: 1;
+        width: 220px;
+        height: 220px;
+        border-radius: 56px;
+        display: grid;
+        place-items: center;
+        font-size: 96px;
+        font-weight: 700;
+        letter-spacing: -0.06em;
+        background: linear-gradient(145deg, #ff7a2f, #ffb347 42%, #3d8bff);
+        box-shadow: 0 30px 90px rgba(255, 122, 47, 0.35);
+        opacity: 0;
+        transform: scale(0.4) rotate(-16deg);
+      }
+
+      .copy {
+        position: relative;
+        z-index: 1;
+        margin-top: 40px;
+        text-align: center;
+        opacity: 0;
+      }
+
+      .copy h1 {
+        margin: 0;
+        font-size: 88px;
+        letter-spacing: -0.05em;
+      }
+
+      .copy p {
+        margin: 14px 0 0;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 24px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 234, 0.55);
+      }
+
+      .stack {
+        display: grid;
+        justify-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="ui2v-upload-demo"
+      data-start="0"
+      data-width="1920"
+      data-height="1080"
+      data-duration="4"
+    >
+      <section class="clip" data-start="0" data-duration="4" data-track-index="0">
+        <div class="halo" id="ud-halo"></div>
+        <div class="stack">
+          <div class="badge" id="ud-badge">HF</div>
+          <div class="copy" id="ud-copy">
+            <h1>Upload ready</h1>
+            <p>HyperFrames · UI2V package</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(
+        "#ud-badge",
+        { scale: 0.35, opacity: 0, rotate: -18 },
+        { scale: 1, opacity: 1, rotate: 0, duration: 0.7, ease: "back.out(1.7)" },
+        0.2,
+      )
+        .fromTo("#ud-halo", { scale: 0.6, opacity: 0 }, { scale: 1.15, opacity: 1, duration: 0.55, ease: "power2.out" }, 0.35)
+        .to("#ud-halo", { opacity: 0, scale: 1.45, duration: 0.7, ease: "power2.in" }, 0.85)
+        .fromTo("#ud-copy", { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 0.75)
+        .to("#ud-badge", { y: -10, duration: 0.8, yoyo: true, repeat: 1, ease: "sine.inOut" }, 1.6);
+      window.__timelines["ui2v-upload-demo"] = tl;
+    </script>
+  </body>
+</html>
