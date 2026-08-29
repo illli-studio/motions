@@ -1,0 +1,23 @@
+{
+  "name": "signal",
+  "type": "hyperframes:block",
+  "title": "Signal",
+  "description": "A signal presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 108,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
