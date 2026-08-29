@@ -1,0 +1,23 @@
+{
+  "name": "pin-and-paper",
+  "type": "hyperframes:block",
+  "title": "Pin And Paper",
+  "description": "A pin and paper presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 66,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
