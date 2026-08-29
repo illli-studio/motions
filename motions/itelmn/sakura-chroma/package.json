@@ -1,0 +1,11 @@
+{
+  "name": "hyperframes-sakura-chroma",
+  "private": true,
+  "scripts": {
+    "check": "npx hyperframes check",
+    "preview": "npx hyperframes preview --background"
+  },
+  "devDependencies": {
+    "hyperframes": "^0.8.17"
+  }
+}
