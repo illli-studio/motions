@@ -1,0 +1,23 @@
+{
+  "name": "soft-editorial",
+  "type": "hyperframes:block",
+  "title": "Soft Editorial",
+  "description": "A soft editorial presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 72,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
