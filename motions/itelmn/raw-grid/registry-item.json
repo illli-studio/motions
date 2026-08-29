@@ -1,0 +1,23 @@
+{
+  "name": "raw-grid",
+  "type": "hyperframes:block",
+  "title": "Raw Grid",
+  "description": "A raw grid presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 60,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
