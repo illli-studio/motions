@@ -1,0 +1,23 @@
+{
+  "name": "editorial-tri-tone",
+  "type": "hyperframes:block",
+  "title": "Editorial Tri Tone",
+  "description": "A editorial tri tone presentation template converted to a timed HyperFrames motion.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 48,
+  "tags": [
+    "presentation",
+    "template",
+    "hyperframes"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
