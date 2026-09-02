@@ -1,0 +1,16 @@
+{
+  "name": "brand-reveal",
+  "type": "hyperframes:block",
+  "title": "Brand Reveal",
+  "description": "A 2.6s brand wordmark reveal: springy accent mark, shimmer sweep and a power-out rise for the NOVA wordmark.",
+  "dimensions": { "width": 1920, "height": 1080 },
+  "duration": 2.6,
+  "tags": ["logo", "reveal", "brand", "wordmark"],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/brand-reveal.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
