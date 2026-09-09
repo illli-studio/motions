@@ -1,11 +1,17 @@
 {
   "owner": "itelmn",
   "slug": "studio-liquid-glass",
-  "displayName": "Liquid Glass",
+  "displayName": "studio-liquid-glass",
   "latest": {
-    "version": "1.0.0",
-    "publishedAt": 1788950682992,
-    "commit": "https://github.com/illli-studio/motions/commit/96c8f34548ff1a2b1c654d9b8b67d8fbbe809ea2"
+    "version": "1.0.1",
+    "publishedAt": 1788950748530,
+    "commit": null
   },
-  "history": []
+  "history": [
+    {
+      "version": "1.0.0",
+      "publishedAt": 1788950682992,
+      "commit": "https://github.com/illli-studio/motions/commit/96c8f34548ff1a2b1c654d9b8b67d8fbbe809ea2"
+    }
+  ]
 }

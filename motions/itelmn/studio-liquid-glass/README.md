@@ -2,15 +2,9 @@
 
 A sculptural frosted-glass control panel with refractive edges, traveling highlights and adaptive ambient light.
 
-1920 × 1080 · 30 fps · 12 seconds.
+This UI2V package contains source files only: index.html, registry-item.json, HyperFrames configuration, motion sidecar, local GSAP, embedded fonts, and license notices. No rendered MP4 is included.
 
-- Entry: index.html
-- Preview: renders/video.mp4
-- Poster: thumbnail.jpg
-- Assets: local GSAP, embedded fonts, and font license notices.
-- Audio: Silent reusable motion.
-- All interfaces and numbers are illustrative demo content.
+Canvas: 1920 × 1080 · 30 fps · 12 seconds.
+Audio: No audio track.
 
-Run npm run dev to preview, npm run check to validate, or npm run render to export.
-
-Original composition released under MIT-0 through UI2V. Third-party assets retain their respective licenses: font licenses are included in assets; GSAP license is referenced in assets/gsap.min.js.
+All interfaces and values are illustrative demo content.
