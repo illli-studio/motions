@@ -1,0 +1,11 @@
+{
+  "owner": "itelmn",
+  "slug": "spotify-card",
+  "displayName": "Spotify Now Playing",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1790608736137,
+    "commit": null
+  },
+  "history": []
+}
