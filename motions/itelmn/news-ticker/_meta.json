@@ -1,0 +1,11 @@
+{
+  "owner": "itelmn",
+  "slug": "news-ticker",
+  "displayName": "News Ticker",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1790608497533,
+    "commit": null
+  },
+  "history": []
+}
