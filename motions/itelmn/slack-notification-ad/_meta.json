@@ -1,0 +1,11 @@
+{
+  "owner": "itelmn",
+  "slug": "slack-notification-ad",
+  "displayName": "Slack Notification Ad",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1790608703220,
+    "commit": null
+  },
+  "history": []
+}
