@@ -1,0 +1,11 @@
+{
+  "owner": "itelmn",
+  "slug": "vid-test",
+  "displayName": "Vid Test",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1790639955148,
+    "commit": null
+  },
+  "history": []
+}
