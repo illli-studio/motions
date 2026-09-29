@@ -1,0 +1,11 @@
+{
+  "owner": "itelmn",
+  "slug": "xgboost",
+  "displayName": "Xgboost",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1790639972858,
+    "commit": null
+  },
+  "history": []
+}
