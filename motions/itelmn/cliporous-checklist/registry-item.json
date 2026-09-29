@@ -1,0 +1,23 @@
+{
+  "name": "cliporous-checklist",
+  "type": "hyperframes:block",
+  "title": "HyperFrames — Checklist",
+  "description": "HyperFrames overlay composition by Gahroot from github.com/Gahroot/cliporous. Licensed under MIT.",
+  "dimensions": {
+    "width": 720,
+    "height": 1280
+  },
+  "duration": 4.0,
+  "tags": [
+    "hyperframes",
+    "overlay",
+    "cliporous"
+  ],
+  "files": [
+    {
+      "type": "hyperframes:composition",
+      "target": "compositions/cliporous-checklist.html",
+      "path": "index.html"
+    }
+  ]
+}
