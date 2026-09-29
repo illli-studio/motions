@@ -1,0 +1,23 @@
+{
+  "name": "cliporous-network-nodes",
+  "type": "hyperframes:block",
+  "title": "HyperFrames — Network Nodes",
+  "description": "HyperFrames overlay composition by Gahroot from github.com/Gahroot/cliporous. Licensed under MIT.",
+  "dimensions": {
+    "width": 720,
+    "height": 1280
+  },
+  "duration": 3.5,
+  "tags": [
+    "hyperframes",
+    "overlay",
+    "cliporous"
+  ],
+  "files": [
+    {
+      "type": "hyperframes:composition",
+      "target": "compositions/cliporous-network-nodes.html",
+      "path": "index.html"
+    }
+  ]
+}
