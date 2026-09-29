@@ -1,0 +1,23 @@
+{
+  "name": "cliporous-glass-card",
+  "type": "hyperframes:block",
+  "title": "HyperFrames — Glass Card",
+  "description": "HyperFrames overlay composition by Gahroot from github.com/Gahroot/cliporous. Licensed under MIT.",
+  "dimensions": {
+    "width": 720,
+    "height": 1280
+  },
+  "duration": 3.0,
+  "tags": [
+    "hyperframes",
+    "overlay",
+    "cliporous"
+  ],
+  "files": [
+    {
+      "type": "hyperframes:composition",
+      "target": "compositions/cliporous-glass-card.html",
+      "path": "index.html"
+    }
+  ]
+}
