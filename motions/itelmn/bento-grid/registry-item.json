@@ -1,0 +1,16 @@
+{
+  "name": "bento-grid",
+  "type": "hyperframes:block",
+  "title": "Bento Grid — ui2v Keynote",
+  "description": "A 15-second keynote-style bento grid animation. Seven cards, five layouts, one idea: a whole motion library in a grid. Every reflow lands on the beat at 150 BPM. Built as a HyperFrames composition introducing the ui2v motion asset library (1,260+ templates).",
+  "dimensions": { "width": 1920, "height": 1080 },
+  "duration": 15,
+  "tags": ["bento", "grid", "keynote", "layout", "ui2v", "product"],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/bento-grid.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
