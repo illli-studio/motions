@@ -1,11 +1,17 @@
 {
   "owner": "itelmn",
   "slug": "self-directed-pixel-film",
-  "displayName": "自己动手：像素导演（540p预演版）",
+  "displayName": "Claude Code Takes Over: A Film About Itself",
   "latest": {
-    "version": "1.0.0",
-    "publishedAt": 1792811957765,
-    "commit": "https://github.com/illli-studio/motions/commit/63af21e8f9e9f2211aede5b0a66551371bb1d9be"
+    "version": "1.0.1",
+    "publishedAt": 1792815354803,
+    "commit": null
   },
-  "history": []
+  "history": [
+    {
+      "version": "1.0.0",
+      "publishedAt": 1792811957765,
+      "commit": "https://github.com/illli-studio/motions/commit/63af21e8f9e9f2211aede5b0a66551371bb1d9be"
+    }
+  ]
 }
