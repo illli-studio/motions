@@ -1,0 +1,50 @@
+{
+  "full_decode_pass": true,
+  "video": [
+    {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "24.000000",
+      "nb_read_frames": "720"
+    }
+  ],
+  "audio": {
+    "input_i": "-16.00",
+    "input_tp": "-3.57",
+    "input_lra": "4.80",
+    "input_thresh": "-26.13",
+    "output_i": "-14.91",
+    "output_tp": "-2.16",
+    "output_lra": "3.20",
+    "output_thresh": "-24.99",
+    "normalization_type": "dynamic",
+    "target_offset": "-1.09"
+  },
+  "duration": "24.000000",
+  "size": 2374801,
+  "sha256": "25d5a90cb439dd3dbe896c9be8e8b634aeb763e2e53c7b0141c9480906ca1fcd",
+  "unordered_seek_pass": true,
+  "official_hyperframes_lint_pass": true,
+  "official_inspect_pass": false,
+  "official_inspect_error": "Protocol error (Target.setDiscoverTargets): Target closed",
+  "export": "Same deterministic film.js draw function via @napi-rs/canvas and FFmpeg; not Hyperframes CLI export",
+  "browser_qa": {
+    "verified_by": "root",
+    "local_preview_seek_play_pass": true,
+    "reviewed_final_still_seconds": [
+      10,
+      22
+    ],
+    "reviewed_browser_seconds": [
+      15,
+      24
+    ],
+    "public_playback_verified": false,
+    "continuous_0_to_24_playback_pass": true,
+    "decoded_mp4_visual_review_seconds": [
+      15
+    ]
+  }
+}

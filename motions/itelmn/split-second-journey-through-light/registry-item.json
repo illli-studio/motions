@@ -1,0 +1,28 @@
+{
+  "name": "split-second-journey-through-light",
+  "type": "hyperframes:block",
+  "title": "Split Second: A Journey Through Light",
+  "description": "An original 24-second light journey. A precise ray drawing becomes a geometric glass prism, a continuous spectrum unfolds, and spectral ribbons carry the camera into a luminous finale. Native deterministic 2D and software 3D with an original score. Stylized visualization, not a physical simulation. No prerendered video.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "2d",
+    "light",
+    "prism",
+    "science-art",
+    "canvas",
+    "music",
+    "1080p"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/split-second-journey-through-light.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
