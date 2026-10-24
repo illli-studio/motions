@@ -1,0 +1,4 @@
+numpy
+scipy
+Pillow
+# External tools: Blender4.3.2, FFmpeg/libx264, HyperframesCLI0.8.186

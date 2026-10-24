@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自己动手：像素导演（540p预演版）</title>
+  <style>
+    @font-face { font-family: "Noto Sans CJK SC"; src: local("Noto Sans CJK SC"); }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f2ecdf; }
+    [data-composition-id="cursor-volumetric"] { position: relative; width: 960px; height: 540px; overflow: hidden; background: #f2ecdf; color: #272b2b; font-family: "Noto Sans CJK SC", sans-serif; }
+    .picture { width: 100%; height: 100%; box-sizing: border-box; display: flex; padding: 0; }
+    .picture video { display: block; width: 100%; height: 100%; object-fit: contain; }
+  </style>
+</head>
+<body>
+  <div id="master" data-composition-id="cursor-volumetric" data-start="0" data-duration="64" data-width="960" data-height="540">
+    <!-- One uninterrupted prerendered 3D camera take. This wrapper is not a timed clip. -->
+    <div class="picture">
+      <video class="clip" id="picture-3d" data-start="0" data-duration="64" data-track-index="0" data-media-start="0" src="assets/film-3d-silent.mp4" muted playsinline preload="auto"></video>
+    </div>
+    <audio class="clip" id="score-and-foley" data-start="0" data-duration="64" data-track-index="1" data-media-start="0" data-volume="1" src="assets/soundtrack.mp3" preload="auto"></audio>
+  </div>
+  <script src="assets/gsap.min.js"></script>
+  <script>
+    // Hyperframes owns all media playback and seeking. The 3D camera/character animation
+    // is baked into the picture plate. No artificial tween is used to stretch duration.
+    window.__timelines = window.__timelines || {};
+    window.__timelines['cursor-volumetric'] = gsap.timeline({ paused: true });
+  </script>
+</body>
+</html>

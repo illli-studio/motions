@@ -1,0 +1,27 @@
+{
+  "name": "self-directed-pixel-film",
+  "type": "hyperframes:block",
+  "title": "自己动手：像素导演（540p预演版）",
+  "description": "64秒、960×540、30fps快运镜像素导演短片（540p预演版），配新版原创合成音乐与动作拟音。Hyperframes主合成以静音540p画面与独立320kbps MP3音轨（有损；Python源码可重建原始PCM WAV）组织播放；真实3D由Blender预渲染，递归屏幕由Python透视合成，并非浏览器原生实时3D。包含可编辑的媒体时序、相机关键帧、几何/角色与配乐Python源代码；修改3D内容需重新渲染。本发布不包含1080p母版。",
+  "dimensions": {
+    "width": 960,
+    "height": 540
+  },
+  "duration": 64,
+  "tags": [
+    "3d",
+    "pixel",
+    "fast-camera",
+    "blender",
+    "hyperframes",
+    "540p",
+    "30fps"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/self-directed-pixel-film.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

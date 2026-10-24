@@ -1,0 +1,261 @@
+{
+  "duration": 64,
+  "bpm": 120,
+  "cues": [
+    {
+      "time": 2.5,
+      "event": "camera-landing",
+      "description": "foot closeup"
+    },
+    {
+      "time": 2.9,
+      "event": "camera-landing",
+      "description": "pointer kick"
+    },
+    {
+      "time": 2.9,
+      "event": "pointer-kick",
+      "description": "Rubber thump, short fly-by"
+    },
+    {
+      "time": 3.5,
+      "event": "camera-landing",
+      "description": "pointer flight"
+    },
+    {
+      "time": 5.5,
+      "event": "camera-landing",
+      "description": "terminal arrival"
+    },
+    {
+      "time": 5.5,
+      "event": "terminal-open",
+      "description": "Glass click with resolving tone"
+    },
+    {
+      "time": 8.2,
+      "event": "typing",
+      "description": "Key taps match character reveal cadence of 3.8 characters per second"
+    },
+    {
+      "time": 8.5,
+      "event": "camera-landing",
+      "description": "typing detail"
+    },
+    {
+      "time": 12.5,
+      "event": "camera-landing",
+      "description": "split onset"
+    },
+    {
+      "time": 12.5,
+      "event": "split-four",
+      "description": "Four rising chimes across stereo"
+    },
+    {
+      "time": 14,
+      "event": "camera-landing",
+      "description": "four roles wide"
+    },
+    {
+      "time": 15,
+      "event": "camera-landing",
+      "description": "model closeup"
+    },
+    {
+      "time": 16,
+      "event": "camera-landing",
+      "description": "code closeup"
+    },
+    {
+      "time": 17,
+      "event": "camera-landing",
+      "description": "music closeup"
+    },
+    {
+      "time": 18,
+      "event": "camera-landing",
+      "description": "edit closeup"
+    },
+    {
+      "time": 20,
+      "event": "camera-landing",
+      "description": "waveform arrival"
+    },
+    {
+      "time": 20.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 20.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 21.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 21.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 22.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 22.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 23.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 23.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 24.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 24.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 25.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 25.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 26.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 26.5,
+      "event": "camera-landing",
+      "description": "material grab"
+    },
+    {
+      "time": 26.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 27.0,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 27.5,
+      "event": "waveform-step",
+      "description": "Lead actor landing on the 120 BPM half-second grid"
+    },
+    {
+      "time": 28.5,
+      "event": "camera-landing",
+      "description": "timeline drop"
+    },
+    {
+      "time": 30,
+      "event": "camera-landing",
+      "description": "render press"
+    },
+    {
+      "time": 30,
+      "event": "render-press",
+      "description": "Exact pedal downbeat; rounded sub and confirmation"
+    },
+    {
+      "time": 32,
+      "event": "camera-landing",
+      "description": "coaster wheel"
+    },
+    {
+      "time": 33.5,
+      "event": "camera-landing",
+      "description": "coaster reveal"
+    },
+    {
+      "time": 35,
+      "event": "camera-landing",
+      "description": "front orbit"
+    },
+    {
+      "time": 37.5,
+      "event": "camera-landing",
+      "description": "side tracking"
+    },
+    {
+      "time": 40,
+      "event": "camera-landing",
+      "description": "descent wide"
+    },
+    {
+      "time": 42,
+      "event": "camera-landing",
+      "description": "player arrival"
+    },
+    {
+      "time": 44.25,
+      "event": "camera-landing",
+      "description": "file lands"
+    },
+    {
+      "time": 44.25,
+      "event": "file-drop",
+      "description": "File lands before recursive acceleration"
+    },
+    {
+      "time": 49.5,
+      "event": "recursion-vacuum",
+      "description": "Abrupt dynamic release; breathing space before merge"
+    },
+    {
+      "time": 51,
+      "event": "camera-landing",
+      "description": "merge starts"
+    },
+    {
+      "time": 51,
+      "event": "merge",
+      "description": "Four voices converge, without a busy percussion bed"
+    },
+    {
+      "time": 53,
+      "event": "camera-landing",
+      "description": "title resolves"
+    },
+    {
+      "time": 53,
+      "event": "title-hit",
+      "description": "One warm resolved chord then sustained reading space"
+    },
+    {
+      "time": 56,
+      "event": "camera-landing",
+      "description": "retreat begins"
+    },
+    {
+      "time": 63,
+      "event": "pointer-setdown",
+      "description": "Gentle closing click before silent loop seam"
+    }
+  ]
+}
