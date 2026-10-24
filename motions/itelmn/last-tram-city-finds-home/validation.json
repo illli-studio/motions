@@ -1,0 +1,62 @@
+{
+  "title": "The Last Tram: A City Finds Its Way Home",
+  "native_resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 720,
+  "duration_seconds": 24,
+  "mp4_bytes": 4796576,
+  "mp4_sha256": "83e29b7ebba8c455d5ced92da2ee386fa67c4e3691d541d70ccd0c400ae89cbb",
+  "full_decode_pass": true,
+  "decoded_audio": {
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -3.8,
+    "loudness_range_lu": 3.5
+  },
+  "deterministic_seek_pass": true,
+  "dynamic_samples": 48,
+  "keyframe_times": [
+    0,
+    1.5,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    23.5
+  ],
+  "hyperframes_lint": "passed 0 errors 0 warnings",
+  "hyperframes_inspect": "blocked: Protocol error (Target.setDiscoverTargets): Target closed",
+  "export_route": "Same deterministic scene function via @napi-rs/canvas, FFmpeg; not claimed official Hyperframes render",
+  "browser_review": "Root verified the final matching revision in cloud Chrome: 20s arrival shows continuous lantern, readable open doorway and gradient light spill; Play advanced 15.00 to 15.16 seconds, continued to 24.00 seconds; Restart reset 0.00; direct 20s seek rendered the arrival. This is local native browser QA, not deployed platform playback.",
+  "fixes": [
+    "station moved behind tram to remove canopy occlusion",
+    "ground/deck composited before raised meshes to prevent large-quad depth error",
+    "arrival hero camera and sliding doorway added",
+    "lantern separated from intersecting arm",
+    "door decal depth ordering corrected",
+    "perspective gradient light spill instead of solid tile"
+  ],
+  "runtime_hashes": {
+    "index.html": "aff0ebf6be334ccedeb7deac186bac7e94c53e79b577dc3069211c879c5b6b77",
+    "film.js": "ca99ae8bae88941075b4bf2ebdbe19843a09204bf77bad98f2432625dc8c3219",
+    "preview.html": "f90c8bec5aa43318bcb620519501ddb1ed4dbb234e22144cb6edc3b3ce8cd1c4",
+    "assets/score.mp3": "279bdc8d623bfa3ebed36b39aaec2654e11a01365ff3e5c06ca34fd707da0731"
+  },
+  "platform_playback_verified": false,
+  "release_lint": {
+    "version": "0.8.186",
+    "ok": true,
+    "errors": 0,
+    "warnings": 0,
+    "files_scanned": 1
+  },
+  "perceptual_audio_listening": "not claimed; decoded audio measurements only"
+}

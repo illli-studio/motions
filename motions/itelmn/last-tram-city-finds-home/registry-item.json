@@ -1,0 +1,27 @@
+{
+  "name": "last-tram-city-finds-home",
+  "type": "hyperframes:block",
+  "title": "The Last Tram: A City Finds Its Way Home",
+  "description": "An original 24-second miniature-city short. A hand-drawn transit route rises into a geometric midnight city; an amber tram crosses a river and reaches a warmly lit station. Native deterministic Canvas 3D and 2D, with an original score and no prerendered video.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "2d",
+    "city",
+    "story",
+    "canvas",
+    "music",
+    "1080p"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/last-tram-city-finds-home.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
