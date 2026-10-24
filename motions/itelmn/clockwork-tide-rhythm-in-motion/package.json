@@ -1,0 +1,12 @@
+{
+  "name": "clockwork-tide",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "preview": "hyperframes preview",
+    "lint": "hyperframes lint"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.186"
+  }
+}

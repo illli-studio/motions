@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Clockwork Tide — A Rhythm in Motion</title><style>@font-face{font-family:ClockSerif;src:url('assets/serif.ttf')}@font-face{font-family:ClockMono;src:url('assets/mono.ttf')}html,body{margin:0;background:#101d26;width:100%;height:100%;overflow:hidden}#clockwork-tide{position:relative;width:1920px;height:1080px}canvas{display:block;width:1920px;height:1080px}</style></head><body><div id="clockwork-tide" data-composition-id="clockwork-tide" data-start="0" data-duration="24" data-width="1920" data-height="1080"><canvas id="scene" width="1920" height="1080" aria-label="An original brass and sea-glass kinetic sculpture unfolds into a spatial wave, then resolves into a circular rhythm."></canvas><audio id="score" src="assets/score.mp3" data-start="0" data-duration="24" data-track-index="1" data-volume="1"></audio></div><script src="assets/gsap.min.js"></script><script src="film.js"></script><script>
+const context=document.getElementById('scene').getContext('2d');
+const tl=gsap.timeline({paused:true});
+tl.to('#scene',{opacity:1,duration:24,ease:'none',onUpdate:()=>ClockworkTide.render(context,tl.time())});
+window.__timelines={'clockwork-tide':tl};
+ClockworkTide.render(context,0);
+document.fonts.ready.then(()=>ClockworkTide.render(context,tl.time()));
+</script></body></html>

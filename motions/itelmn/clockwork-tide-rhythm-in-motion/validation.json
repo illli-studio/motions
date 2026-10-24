@@ -1,0 +1,62 @@
+{
+  "title": "Clockwork Tide: A Rhythm in Motion",
+  "duration_seconds": 24,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "decoded_video_frames": 720,
+  "mp4_bytes": 4102147,
+  "mp4_sha256": "9bf7ddf9d4611642a717cd37e91ef420468a7823293ae2bb23b4d84857f5a62a",
+  "full_decode_passed": true,
+  "final_mp4_audio_lufs": -15.14,
+  "final_mp4_audio_true_peak_dbtp": -1.82,
+  "final_mp4_audio_lra": 4.7,
+  "native_browser": {
+    "verified_by": "root via CUA cloud Chrome local preview",
+    "checks": [
+      "10s/15s/23s visible scrub buttons render distinct native frames",
+      "Play advances 10s to24s",
+      "Restart resets0s",
+      "final revised15s sphere closed and comfortable bottommargin"
+    ],
+    "final_revision_passed": true
+  },
+  "official_hyperframes_lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 1,
+    "_meta": {
+      "version": "0.8.186",
+      "updateAvailable": false
+    }
+  },
+  "official_hyperframes_inspect": {
+    "passed": false,
+    "blocker": "Protocol error(Target.setDiscoverTargets): Targetclosed; no securityflag workaround"
+  },
+  "export_route": "same deterministic procedural JS Canvas draw(t), @napi-rs/canvas CPU rasterization, FFmpeg H264/AAC; not officialChromium export",
+  "deterministic_seek": {
+    "timestamp": 12.25,
+    "forwardHash": "540cdd323422eea521207b54f4711fe0cc85f100ee90fdf37c0ae158e6cdd0f7",
+    "nonlinearHash": "540cdd323422eea521207b54f4711fe0cc85f100ee90fdf37c0ae158e6cdd0f7",
+    "deterministic": true
+  },
+  "visual_review": {
+    "keyframes": 13,
+    "dynamic_samples": 16,
+    "repairs": [
+      "rings oriented along their spacedaxis",
+      "camera push backed.95worldunits for~65px bottommargin",
+      "sphere topcap degenerateface removed",
+      "screen score fadesbefore foregroundsphere approach"
+    ],
+    "reviewed_by": "filmagent and root; no selfscore"
+  },
+  "licensing": "originals MIT-0; GSAPstandardlicense and DejaVu notices retained",
+  "publication_package_video_free": true,
+  "platform_playback_verified": false,
+  "perceptual_audio_listening": "notclaimed; measurements and decodedstream checks only"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "clockwork-tide-rhythm-in-motion",
+  "type": "hyperframes:block",
+  "title": "Clockwork Tide: A Rhythm in Motion",
+  "description": "An original 24-second brass-and-sea-glass kinetic sculpture. Real procedural 3D geometry and a refined 2D musical trace unfold into a spatial wave, then settle into a circular cadence. Native deterministic Canvas playback with an original soundtrack; no prerendered video.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "2d",
+    "kinetic-art",
+    "canvas",
+    "music",
+    "1080p"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/clockwork-tide-rhythm-in-motion.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
