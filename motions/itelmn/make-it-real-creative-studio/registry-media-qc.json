@@ -1,0 +1,26 @@
+{
+  "visual": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 720,
+    "duration": 24.0,
+    "sha256": "de841918059826a2e795236a7f5e9cbd9206ea5dfc962390b305dfcc0ac467dd",
+    "unchanged_from_delivered_silent_master": true
+  },
+  "registry_audio": {
+    "codec": "mp3",
+    "bitrate": 320000,
+    "sample_rate": 48000,
+    "channels": 2,
+    "container_duration": 24.024,
+    "timeline_duration": 24,
+    "note": "MP3 frame padding extends the container duration by 24ms; Hyperframes track is exactly 24s.",
+    "decode_pass": true,
+    "measured_integrated_lufs": -15.18,
+    "measured_true_peak_dbtp": -1.15,
+    "source": "Original soundtrack.wav converted with libmp3lame 320kbps"
+  },
+  "hyperframes_static_lint": "0 errors, 0 warnings on Hyperframes 0.8.186",
+  "browser_visual_validation": "not passed; original attempt returned Chrome Target closed",
+  "human_listening_verified": false
+}

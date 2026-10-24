@@ -1,0 +1,86 @@
+{
+  "title": "一句话，开一间创意工作室",
+  "english_title": "Make It Real",
+  "duration": 24,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "bpm": 120,
+  "aspect_ratio": "16:9",
+  "theme": "将一句创作指令变成可播放的作品",
+  "shots": [
+    {
+      "start": 0,
+      "end": 2,
+      "action": "输入一句话并提交",
+      "media": [
+        "2D UI",
+        "3D base"
+      ],
+      "camera": "缓推"
+    },
+    {
+      "start": 2,
+      "end": 6,
+      "action": "图形路径将指令分流，工作室折叠展开",
+      "media": [
+        "2D paths",
+        "3D geometry"
+      ],
+      "camera": "斜侧拉开"
+    },
+    {
+      "start": 6,
+      "end": 10,
+      "action": "角色拉动矢量控制框，三维造型升起旋转",
+      "media": [
+        "2D control handles",
+        "3D form and character"
+      ],
+      "camera": "快速局部推近并轻环绕"
+    },
+    {
+      "start": 10,
+      "end": 14,
+      "action": "真实音频峰值驱动波形与立体音柱",
+      "media": [
+        "2D PCM envelope",
+        "3D bars"
+      ],
+      "camera": "横移跟随"
+    },
+    {
+      "start": 14,
+      "end": 18,
+      "action": "时间线素材按拍落位，播放头前进",
+      "media": [
+        "3D timeline",
+        "2D local typography"
+      ],
+      "camera": "升高俯看"
+    },
+    {
+      "start": 18,
+      "end": 21,
+      "action": "作品在空间播放器内快速回放",
+      "media": [
+        "2D actual footage",
+        "3D screen"
+      ],
+      "camera": "拉出后缓推"
+    },
+    {
+      "start": 21,
+      "end": 24,
+      "action": "片名在播放器中出现，结束信息留白",
+      "media": [
+        "2D title",
+        "3D screen"
+      ],
+      "camera": "减速停留"
+    }
+  ],
+  "quality_gate": "Native 1080p frame inspection, geometry collision scan, typography contrast, FFmpeg decode, final AAC peak/loudness. Human listening not verified."
+}

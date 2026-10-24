@@ -1,0 +1,13 @@
+{
+  "name": "make-it-real-creative-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "hyperframes preview",
+    "lint": "hyperframes lint",
+    "render": "hyperframes render --fps 30 --output make-it-real.mp4"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.186"
+  }
+}

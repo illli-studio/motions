@@ -1,0 +1,26 @@
+{
+  "name": "make-it-real-creative-studio",
+  "type": "hyperframes:block",
+  "title": "Make It Real: From Prompt to Creative Studio",
+  "description": "A 24-second journey from a single prompt to a playful creative studio. Crisp 2D controls meet a real 3D character, spatial camera moves, soundtrack-driven waveforms, a physical edit timeline, and a screen that plays the film itself. Includes the Hyperframes media composition and editable Blender/Python production sources. Native 1920×1080, 30fps; prerendered 3D, not a real-time WebGL scene.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "2d",
+    "creative-studio",
+    "motion-design",
+    "music",
+    "1080p"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/make-it-real-creative-studio.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
