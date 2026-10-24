@@ -1,0 +1,26 @@
+{
+  "name": "paper-garden-line-to-bloom",
+  "type": "hyperframes:block",
+  "title": "Paper Garden: A Line Learns to Bloom",
+  "description": "A graphite line becomes a folded stem, opens into a coral paper flower, and spreads into a small kinetic garden. Real 3D origami geometry meets camera-projected 2D crease lines and an original tactile score. Includes a Hyperframes media composition and editable Blender/Python sources. Native 1920×1080, 30fps, 20 seconds; prerendered 3D, not a live WebGL scene.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 20,
+  "tags": [
+    "origami",
+    "paper",
+    "nature",
+    "3d",
+    "2d",
+    "motion-design"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/paper-garden-line-to-bloom.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

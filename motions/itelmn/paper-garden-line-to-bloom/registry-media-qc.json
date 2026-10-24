@@ -1,0 +1,43 @@
+{
+  "status": "passed_technical_release_checks",
+  "distributionAudio": {
+    "file": "assets/soundtrack.mp3",
+    "codec": "mp3",
+    "bitrate": 320000,
+    "sampleRate": 48000,
+    "channels": 2,
+    "containerDurationSeconds": 20.04,
+    "compositionDurationSeconds": 20,
+    "note": "MP3 encoder padding adds 0.04 seconds; composition trims playback at 20 seconds.",
+    "fullDecodeExitCode": 0,
+    "measuredIntegratedLoudnessLUFS": -15.2,
+    "measuredTruePeakDBTP": -1.18,
+    "measuredLoudnessRangeLU": 3.3,
+    "sha256": "ee098a8a48377f3b821ee1b921df437d295dd89511376ec17bc5dccef44c41c2"
+  },
+  "browserPlayback": "not verified",
+  "officialCliRender": false,
+  "silentVisual": {
+    "file": "assets/visual.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frameCount": 600,
+    "durationSeconds": 20,
+    "fullDecodeExitCode": 0,
+    "sha256": "9907bb8f1340d4c325c1436dec87c9366d011acd65cdf4500b5de6c427cbe5f8",
+    "matchesProductionVisual": true
+  },
+  "hyperframesLint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 1,
+    "_meta": {
+      "version": "0.8.186",
+      "updateAvailable": false
+    }
+  }
+}

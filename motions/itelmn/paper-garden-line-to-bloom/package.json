@@ -1,0 +1,13 @@
+{
+  "name": "paper-garden-line-to-bloom",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "hyperframes preview",
+    "lint": "hyperframes lint",
+    "render": "hyperframes render --fps 30 --output paper-garden.mp4"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.186"
+  }
+}

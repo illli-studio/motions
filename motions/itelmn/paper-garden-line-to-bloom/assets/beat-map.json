@@ -1,0 +1,528 @@
+{
+  "bpm": 120,
+  "duration": 20,
+  "beats": [
+    {
+      "index": 0,
+      "time": 0.0,
+      "bar": 0,
+      "downbeat": true
+    },
+    {
+      "index": 1,
+      "time": 0.5,
+      "bar": 0,
+      "downbeat": false
+    },
+    {
+      "index": 2,
+      "time": 1.0,
+      "bar": 0,
+      "downbeat": false
+    },
+    {
+      "index": 3,
+      "time": 1.5,
+      "bar": 0,
+      "downbeat": false
+    },
+    {
+      "index": 4,
+      "time": 2.0,
+      "bar": 1,
+      "downbeat": true
+    },
+    {
+      "index": 5,
+      "time": 2.5,
+      "bar": 1,
+      "downbeat": false
+    },
+    {
+      "index": 6,
+      "time": 3.0,
+      "bar": 1,
+      "downbeat": false
+    },
+    {
+      "index": 7,
+      "time": 3.5,
+      "bar": 1,
+      "downbeat": false
+    },
+    {
+      "index": 8,
+      "time": 4.0,
+      "bar": 2,
+      "downbeat": true
+    },
+    {
+      "index": 9,
+      "time": 4.5,
+      "bar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 10,
+      "time": 5.0,
+      "bar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 11,
+      "time": 5.5,
+      "bar": 2,
+      "downbeat": false
+    },
+    {
+      "index": 12,
+      "time": 6.0,
+      "bar": 3,
+      "downbeat": true
+    },
+    {
+      "index": 13,
+      "time": 6.5,
+      "bar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 14,
+      "time": 7.0,
+      "bar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 15,
+      "time": 7.5,
+      "bar": 3,
+      "downbeat": false
+    },
+    {
+      "index": 16,
+      "time": 8.0,
+      "bar": 4,
+      "downbeat": true
+    },
+    {
+      "index": 17,
+      "time": 8.5,
+      "bar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 18,
+      "time": 9.0,
+      "bar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 19,
+      "time": 9.5,
+      "bar": 4,
+      "downbeat": false
+    },
+    {
+      "index": 20,
+      "time": 10.0,
+      "bar": 5,
+      "downbeat": true
+    },
+    {
+      "index": 21,
+      "time": 10.5,
+      "bar": 5,
+      "downbeat": false
+    },
+    {
+      "index": 22,
+      "time": 11.0,
+      "bar": 5,
+      "downbeat": false
+    },
+    {
+      "index": 23,
+      "time": 11.5,
+      "bar": 5,
+      "downbeat": false
+    },
+    {
+      "index": 24,
+      "time": 12.0,
+      "bar": 6,
+      "downbeat": true
+    },
+    {
+      "index": 25,
+      "time": 12.5,
+      "bar": 6,
+      "downbeat": false
+    },
+    {
+      "index": 26,
+      "time": 13.0,
+      "bar": 6,
+      "downbeat": false
+    },
+    {
+      "index": 27,
+      "time": 13.5,
+      "bar": 6,
+      "downbeat": false
+    },
+    {
+      "index": 28,
+      "time": 14.0,
+      "bar": 7,
+      "downbeat": true
+    },
+    {
+      "index": 29,
+      "time": 14.5,
+      "bar": 7,
+      "downbeat": false
+    },
+    {
+      "index": 30,
+      "time": 15.0,
+      "bar": 7,
+      "downbeat": false
+    },
+    {
+      "index": 31,
+      "time": 15.5,
+      "bar": 7,
+      "downbeat": false
+    },
+    {
+      "index": 32,
+      "time": 16.0,
+      "bar": 8,
+      "downbeat": true
+    },
+    {
+      "index": 33,
+      "time": 16.5,
+      "bar": 8,
+      "downbeat": false
+    },
+    {
+      "index": 34,
+      "time": 17.0,
+      "bar": 8,
+      "downbeat": false
+    },
+    {
+      "index": 35,
+      "time": 17.5,
+      "bar": 8,
+      "downbeat": false
+    },
+    {
+      "index": 36,
+      "time": 18.0,
+      "bar": 9,
+      "downbeat": true
+    },
+    {
+      "index": 37,
+      "time": 18.5,
+      "bar": 9,
+      "downbeat": false
+    },
+    {
+      "index": 38,
+      "time": 19.0,
+      "bar": 9,
+      "downbeat": false
+    },
+    {
+      "index": 39,
+      "time": 19.5,
+      "bar": 9,
+      "downbeat": false
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 0.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 0.2,
+      "type": "graphite-scratch"
+    },
+    {
+      "time": 1.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 2.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 2.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 2.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 2.3,
+      "type": "paper-fold"
+    },
+    {
+      "time": 3.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 3.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 3.5,
+      "type": "paper-fold"
+    },
+    {
+      "time": 4.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 4.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 4.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 4.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 5.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 5.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 5.0,
+      "type": "paper-fold"
+    },
+    {
+      "time": 5.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 5.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 6.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 6.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 6.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 6,
+      "type": "bloom-chime"
+    },
+    {
+      "time": 6.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 6.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 7.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 7.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 7.0,
+      "type": "paper-fold"
+    },
+    {
+      "time": 7.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 7.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 8.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 8.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 8.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 8.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 8.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 9.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 9.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 9,
+      "type": "bloom-chime"
+    },
+    {
+      "time": 9.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 9.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 10.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 10.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 10.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 10.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 10.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 11.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 11.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 11.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 11.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 12.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 12.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 12.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 12,
+      "type": "bloom-chime"
+    },
+    {
+      "time": 12.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 12.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 13.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 13.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 13.5,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 13.75,
+      "type": "tine-highlight"
+    },
+    {
+      "time": 14.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 14.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 14.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 15.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 15.0,
+      "type": "wood-tap"
+    },
+    {
+      "time": 16.0,
+      "type": "paper-pluck"
+    },
+    {
+      "time": 16.0,
+      "type": "warm-bass"
+    },
+    {
+      "time": 17.5,
+      "type": "closing-accent"
+    }
+  ],
+  "qc": {
+    "integrated_lufs": -15.2,
+    "true_peak_dbtp": -1.19,
+    "loudness_range_lu": 3.3,
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration_seconds": 20
+  }
+}

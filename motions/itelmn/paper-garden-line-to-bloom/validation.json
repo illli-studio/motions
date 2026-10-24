@@ -1,0 +1,46 @@
+{
+  "title": "Paper Garden: A Line Learns to Bloom",
+  "duration_seconds": 20,
+  "width": 1920,
+  "height": 1080,
+  "frame_rate": 30,
+  "frame_count": 600,
+  "native_resolution": true,
+  "decode_errors": 0,
+  "audio_channels": 2,
+  "audio_sample_rate": 48000,
+  "mp4_bytes": 7258625,
+  "sha256": "ff3d097c9681621764ac1097cb4706d3254d3f395ad34a8569f4d4ae33055d3d",
+  "audio_measurement_log": "audio-check.txt",
+  "visual_review_status": "Reviewed final full-film 1-second contact sheet, unfolding 5-frame sequence, camera/growth 10-frame sequence, and corrected native shadow frames; no remaining visible blocker in those checks",
+  "limitations": [
+    "Blender Workbench faceted lighting, not path-traced materials",
+    "Hyperframes assembles prerendered visual plate; procedural 3D is in scene.py"
+  ],
+  "audio_integrated_lufs": -15.0,
+  "audio_true_peak_dbfs": -1.2,
+  "audio_loudness_range_lu": 1.7,
+  "foreground_geometry_framing": {
+    "checked_frame_range": [
+      366,
+      599
+    ],
+    "inside_frame": true,
+    "minimum_bottom_margin_px": 141.366
+  },
+  "repairs": [
+    "Simplified petal tiers and reduced center",
+    "Connected line tip and seed",
+    "Reframed bud",
+    "Moved foreground flower inward from first appearance",
+    "Disabled floor self-shadow casting; rerendered all 600 frames"
+  ],
+  "review_evidence": [
+    "contact-sheet.jpg",
+    "fold-motion.jpg",
+    "camera-motion.jpg",
+    "clean-shadow-proof.jpg",
+    "framing-check.json"
+  ],
+  "release_ready": true
+}
