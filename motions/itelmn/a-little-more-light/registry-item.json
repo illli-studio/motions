@@ -1,0 +1,25 @@
+{
+  "name": "a-little-more-light",
+  "type": "hyperframes:block",
+  "title": "A Little More Light",
+  "description": "A ceramic articulated lamp unfolds in the dark. Its warm beam reveals two miniature illustrated gardens, then settles into a quiet tableau. Actual procedural 3D geometry and 2D botanical illustration share a deterministic native Canvas timeline with original music. No video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "lamp",
+    "product",
+    "illustration",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/a-little-more-light.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
