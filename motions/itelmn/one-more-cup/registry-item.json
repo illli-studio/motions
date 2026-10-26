@@ -1,0 +1,25 @@
+{
+  "name": "one-more-cup",
+  "type": "hyperframes:block",
+  "title": "One More Cup",
+  "description": "A 24-second original life-story miniature: two hollow ceramic cups, a brass kettle, a rainy window and shared warmth. True projected 3D meshes with deterministic 2D steam, rain and typography. Original 90 BPM felt-piano score. No video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "life-story",
+    "tea",
+    "canvas",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/one-more-cup.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
