@@ -1,0 +1,25 @@
+{
+  "name": "after-rain",
+  "type": "hyperframes:block",
+  "title": "After the Rain",
+  "description": "A cobalt umbrella catches a passing shower, folds, and rests beside a sunlit puddle. Original 24-second geometric miniature, deterministic native 3D Canvas and 2D ripples, original synchronized music; no video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "life-story",
+    "umbrella",
+    "canvas",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/after-rain.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
