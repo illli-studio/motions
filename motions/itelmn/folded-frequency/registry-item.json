@@ -1,0 +1,25 @@
+{
+  "name": "folded-frequency",
+  "type": "hyperframes:block",
+  "title": "Folded Frequency",
+  "description": "A 22-second original sound sculpture: a waveform folds into a true projected 3D ribbon, carries synchronized pulses, and returns to stillness. Native deterministic Canvas geometry, typography, camera motion and original synthesized music. No video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 22,
+  "tags": [
+    "3d",
+    "sound-sculpture",
+    "canvas",
+    "abstract",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/folded-frequency.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
