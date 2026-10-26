@@ -1,0 +1,25 @@
+{
+  "name": "between-the-pages",
+  "type": "hyperframes:block",
+  "title": "Between the Pages",
+  "description": "A hardcover opens into two original illustrated worlds. A saffron ribbon wanders across the spread, settles between the pages, and remains as the book closes. Real hinged book geometry and 2D ink illustration share a deterministic native Canvas scene with an original score. No video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "story",
+    "book",
+    "illustration",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/between-the-pages.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
