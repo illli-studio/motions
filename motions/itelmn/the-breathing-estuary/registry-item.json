@@ -1,0 +1,25 @@
+{
+  "name": "breathing-estuary",
+  "type": "hyperframes:block",
+  "title": "The Breathing Estuary",
+  "description": "An original 24-second stylized tidal study: connected channels flood and recede through real procedural terrain geometry. Native Canvas, synchronized original music, no video plate; not a fluid simulation.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "nature",
+    "estuary",
+    "canvas",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/breathing-estuary.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
