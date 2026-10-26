@@ -1,0 +1,25 @@
+{
+  "name": "place-for-everything",
+  "type": "hyperframes:block",
+  "title": "A Place for Everything",
+  "description": "A 24-second tactile product-interaction miniature: flat scattered marks become solid tokens, three hollow modular trays assemble, and nine matching pieces settle into place. Native projected 3D geometry, 2D drafting accents and an original synchronized score. No video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "product-interaction",
+    "organizer",
+    "canvas",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/place-for-everything.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
