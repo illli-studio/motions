@@ -1,0 +1,25 @@
+{
+  "name": "handle-with-wonder",
+  "type": "hyperframes:block",
+  "title": "Handle with Wonder",
+  "description": "A terracotta parcel unfolds to reveal a miniature architectural city. Fine postal routes become street marks, then the city retracts and the parcel closes with one warm window. Original procedural 3D geometry, 2D illustration and synchronized music.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "parcel",
+    "city",
+    "story",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/handle-with-wonder.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
