@@ -1,0 +1,25 @@
+{
+  "name": "the-long-way-down",
+  "type": "hyperframes:block",
+  "title": "The Long Way Down",
+  "description": "An original 24-second marble-run animation: a mint marble descends a banked porcelain track and rings a suspended brass bell. Editable native Canvas geometry, deterministic camera motion, typography and an original synthesized score. A stylized cinematic study, not a calibrated physics simulation.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "marble-run",
+    "canvas",
+    "cinematic",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/the-long-way-down.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "the-long-way-down",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT-0",
+  "scripts": {
+    "preview": "hyperframes preview",
+    "lint": "hyperframes lint"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.186"
+  }
+}
