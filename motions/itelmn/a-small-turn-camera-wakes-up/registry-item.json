@@ -1,0 +1,26 @@
+{
+  "name": "a-small-turn-camera-wakes-up",
+  "type": "hyperframes:block",
+  "title": "A Small Turn: The Camera Wakes Up",
+  "description": "An original camera-inspired product animation. A 2D focus diagram becomes a geometric 3D camera; the lens and aperture move, the shutter clicks, and a picture emerges. Native deterministic geometry, refined typography and an original score. Fictional conceptual product, not an engineering simulation.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "2d",
+    "camera",
+    "product",
+    "canvas",
+    "music"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/a-small-turn-camera-wakes-up.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

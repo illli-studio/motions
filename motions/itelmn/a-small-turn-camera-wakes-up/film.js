@@ -1,0 +1,53 @@
+/* Original fictional camera product film. MIT-0. Deterministic software 3D. */
+(function(root){'use strict';const PI=Math.PI,W=1920,H=1080;
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),mix=(a,b,u)=>a+(b-a)*u,sm=u=>{u=clamp(u);return u*u*(3-2*u)},seg=(t,a,b)=>sm((t-a)/(b-a));
+const add=(a,b)=>a.map((v,i)=>v+b[i]),sub=(a,b)=>a.map((v,i)=>v-b[i]),dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm=a=>{let l=Math.hypot(...a)||1;return a.map(v=>v/l)},lerp=(a,b,u)=>a.map((v,i)=>mix(v,b[i],u));
+function poly(c,p,col,stroke){c.beginPath();p.forEach((v,i)=>i?c.lineTo(v[0],v[1]):c.moveTo(v[0],v[1]));c.closePath();c.fillStyle=col;c.fill();if(stroke){c.strokeStyle=stroke;c.lineWidth=1.1;c.stroke()}}
+function line(c,p,col,w=2){c.beginPath();p.forEach((v,i)=>i?c.lineTo(v[0],v[1]):c.moveTo(v[0],v[1]));c.strokeStyle=col;c.lineWidth=w;c.lineJoin='round';c.stroke()}
+function text(c,s,x,y,n=24,col='#302c32',font='CamMono',a=1){c.save();c.globalAlpha*=a;c.fillStyle=col;c.font=n+'px '+font;c.fillText(s,x,y);c.restore()}
+function camera(t){let ks=[[0,[0,1,12],[0,0,0],1400],[4,[0,1,12],[0,0,0],1400],[7,[5.5,3.1,8.5],[0,0,.4],1420],[9,[2,1.5,7],[0,0,1],1600],[11,[.2,.6,5],[0,0,1.4],1650],[12.7,[0,.08,3.1],[0,0,1.6],1700],[15,[0,.08,3.1],[0,0,1.6],1700],[17,[3,2,8],[.6,0,.5],1450],[20,[4,2.6,10],[1,0,0],1450],[24,[4.4,2.8,10],[1,0,0],1450]],a=ks[0],b=ks[1];for(let i=1;i<ks.length;i++)if(t<=ks[i][0]){a=ks[i-1];b=ks[i];break}let u=seg(t,a[0],b[0]),pos=lerp(a[1],b[1],u),tar=lerp(a[2],b[2],u),f=norm(sub(tar,pos)),r=norm(cross(f,[0,1,0])),up=cross(r,f),fl=mix(a[3],b[3],u);return p=>{let d=sub(p,pos),z=dot(d,f);return[960+dot(d,r)*fl/z,625-dot(d,up)*fl/z,z]}}
+function shade(hex,k){return '#'+[1,3,5].map(i=>Math.round(clamp(parseInt(hex.slice(i,i+2),16)*k,0,255)).toString(16).padStart(2,'0')).join('')}
+function render(c,t){t=clamp(t,0,24);c.resetTransform();c.clearRect(0,0,W,H);c.fillStyle='#eee7da';c.fillRect(0,0,W,H);
+text(c,'A SMALL TURN / AN ORIGINAL PRODUCT STUDY',110,95,20,'#73666b');line(c,[[110,121],[1810,121]],'#c6bdb0',1);text(c,'FICTIONAL CAMERA · STYLISED MECHANISM',110,1022,18,'#73666b');
+let P=camera(t),faces=[],strokes=[],part=0;
+const face=(p,col,edge)=>faces.push({p,col,edge,part,z:p.reduce((s,q)=>s+P(q)[2],0)/p.length});
+function box(x,y,z,w,h,d,col){let v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(p=>[x+p[0]*w/2,y+p[1]*h/2,z+p[2]*d/2]);for(let ids of [[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[3,7,6,2],[0,1,5,4]]){let n=norm(cross(sub(v[ids[1]],v[ids[0]]),sub(v[ids[2]],v[ids[0]])));let lit=.68+.32*Math.max(0,dot(n,norm([-.5,.9,1])));let pts=ids.map(i=>v[i]),pr=pts.map(P),area=pr.reduce((s,p,i)=>{let q=pr[(i+1)%pr.length];return s+p[0]*q[1]-q[0]*p[1]},0);if(area<0)face(pts,shade(col,lit),'#51474a');}}
+function bevelBody(x,y,z,w,h,d,col){let r=.16, outline=[[-w/2+r,-h/2],[w/2-r,-h/2],[w/2,-h/2+r],[w/2,h/2-r],[w/2-r,h/2],[-w/2+r,h/2],[-w/2,h/2-r],[-w/2,-h/2+r]],front=outline.map(p=>[p[0]+x,p[1]+y,z+d/2]),back=outline.map(p=>[p[0]+x,p[1]+y,z-d/2]);face(back,shade(col,.65),'#51474a');for(let i=0;i<8;i++){let j=(i+1)%8;face([back[i],back[j],front[j],front[i]],shade(col,.72+i*.018),'#51474a');}face(front,col,'#51474a');}
+function buttonY(x,y,z,r,h){let top=[];for(let i=0;i<32;i++){let a=i*PI/16,b=(i+1)*PI/16;top.push([x+r*Math.cos(a),y+h,z+r*Math.sin(a)]);face([[x+r*Math.cos(a),y,z+r*Math.sin(a)],[x+r*Math.cos(b),y,z+r*Math.sin(b)],[x+r*Math.cos(b),y+h,z+r*Math.sin(b)],[x+r*Math.cos(a),y+h,z+r*Math.sin(a)]],shade('#aaa096',.75+.2*Math.sin(a)));}face(top,'#d9cdbc','#887b75');}
+function ring(cx,cy,z,r,inner,depth,col,rot=0,N=64){for(let i=0;i<N;i++){let a=i*2*PI/N+rot,b=(i+1)*2*PI/N+rot,p=(r,a,z)=>[cx+r*Math.cos(a),cy+r*Math.sin(a),z];face([p(r,a,z),p(r,b,z),p(r,b,z-depth),p(r,a,z-depth)],shade(col,.7+.2*Math.sin(a)),'');face([p(r,a,z),p(r,b,z),p(inner,b,z),p(inner,a,z)],shade(col,.82+.14*Math.sin(a)),'');}}
+const vis=seg(t,3.2,4.3);if(vis>0){c.save();c.globalAlpha=vis;let assemble=1-seg(t,3.6,6.5),bodyZ=-assemble*1.8;
+let shadow=P([0,-1.05,0]);c.save();c.translate(shadow[0],shadow[1]);c.scale(1,.22);let g=c.createRadialGradient(0,0,10,0,0,420);g.addColorStop(0,'rgba(48,44,50,.22)');g.addColorStop(1,'rgba(48,44,50,0)');c.fillStyle=g;c.beginPath();c.arc(0,0,420,0,PI*2);c.fill();c.restore();
+bevelBody(0,-.2,bodyZ,4.2,1.6,1.35,'#743441');part=1;box(0,.79+assemble*.65,bodyZ,4.30,.43,1.45,'#c6bdb0');part=-1;box(0,-.91-assemble*.4,bodyZ,4.25,.2,1.4,'#aaa096');part=1;box(-1.55,.56,bodyZ+.72,.65,.42,.1,'#302c32');box(-1.55,.56,bodyZ+.79,.44,.25,.05,'#397c79');box(1.35,.64,bodyZ+.73,.72,.35,.09,'#e0d6c6');box(1.35,.64,bodyZ+.8,.54,.2,.04,'#d8ddd0');
+// Rounded shoulder screw details and the release button.
+buttonY(1.4,1.04,bodyZ+.15,.22,.10);
+part=2;let lensZ=1.32+assemble*2.2,focus=seg(t,7.6,10.8)*1.4;
+ring(0,0,lensZ,.94,.72,.72,'#5e5557');ring(0,0,lensZ+.13,.96,.74,.15,'#b8aea0');ring(0,0,lensZ+.22,.87,.7,.11,'#302c32');
+// Physical focus-ring knurling, individually projected, follows rotating ring.
+for(let i=0;i<72;i++){let a=i*2*PI/72+focus,rr=.948;strokes.push({p:[[rr*Math.cos(a),rr*Math.sin(a),lensZ-.42],[rr*Math.cos(a),rr*Math.sin(a),lensZ-.09]],col:i%3?'#8b7d79':'#d5c9b7',w:1.4,z:P([rr*Math.cos(a),rr*Math.sin(a),lensZ-.2])[2]});}
+// Glass annulus with changing teal reflections, actual disc in object plane.
+let opticalStart=faces.length;ring(0,0,lensZ+.26,.70,.50,.025,'#397c79');let disc=[];for(let i=0;i<64;i++)disc.push([.52*Math.cos(i*2*PI/64),.52*Math.sin(i*2*PI/64),lensZ+.275]);face(disc,'#152b31');
+let aperture=mix(.43,.12,seg(t,12,13.3))+.31*seg(t,14,15.2);let bladeRot=.38*seg(t,12,13.3)-.3*seg(t,14,15.2);
+for(let i=0;i<8;i++){let a=i*PI/4+bladeRot,b=a+PI/4;face([[.51*Math.cos(a),.51*Math.sin(a),lensZ+.29],[.51*Math.cos(b),.51*Math.sin(b),lensZ+.29],[aperture*Math.cos(b+.2),aperture*Math.sin(b+.2),lensZ+.292],[aperture*Math.cos(a+.2),aperture*Math.sin(a+.2),lensZ+.292]],i%2?'#687e80':'#4b6469','#9db4ae');}
+// The coplanar optical layers are explicitly stacked to prevent coarse painter-order holes.
+for(let [i,f] of faces.slice(opticalStart).entries()){f.optical=true;f.opticalOrder=i;}
+// Calibrated-looking marks carry no false numerical specification.
+for(let i=0;i<24;i++){let a=i*PI/12+focus;strokes.push({p:[[.79*Math.cos(a),.79*Math.sin(a),lensZ+.235],[.84*Math.cos(a),.84*Math.sin(a),lensZ+.235]],col:'#d6c8b5',w:i%3?1.3:2.5,z:P([0,0,lensZ+.24])[2]-.01});}
+let drawqueue=[...faces,...strokes.map(s=>({...s,isLine:true,part:2}))].sort((a,b)=>(a.part-b.part)||(+!!a.optical)-(+!!b.optical)||(a.optical?a.opticalOrder-b.opticalOrder:b.z-a.z));for(let f of drawqueue){if(f.isLine)line(c,f.p.map(P),f.col,f.w);else poly(c,f.p.map(P),f.col,f.edge);}
+// Lens coatings are restrained highlights, not a flat replacement image.
+let shine=[];for(let i=0;i<20;i++){let a=PI*.18+i*PI*.5/20;shine.push(P([.61*Math.cos(a),.61*Math.sin(a),lensZ+.31]));}line(c,shine,'#9ed4c7',3);let refl=[];for(let i=0;i<24;i++){let a=PI*.8+i*PI*.18/24;refl.push(P([.64*Math.cos(a),.64*Math.sin(a),lensZ+.315]));}line(c,refl,'rgba(242,240,215,.7)',2);
+// Leatherette grain follows the front plane and never covers the lens.
+for(let ix=-19;ix<=19;ix++)for(let iy=-6;iy<=6;iy++){let x=ix*.1,y=iy*.1;if(Math.hypot(x,y)>1.07){let q=P([x,y,bodyZ+.681]);c.fillStyle='rgba(221,166,161,.24)';c.fillRect(q[0],q[1],1.3,1.3);}}
+c.restore();}
+// Intro focus target is continuous with lens centre.
+if(t<4.5){let a=1-seg(t,3.3,4.5);c.save();c.globalAlpha=a;text(c,'A small turn.',110,270,96,'#302c32','CamSerif',seg(t,.2,1.2));text(c,'A new way to see.',110,363,66,'#743441','CamSerif',seg(t,.6,1.6));let q=[1120,660],r=mix(180,125,seg(t,1,3));c.save();c.globalAlpha*=seg(t,.6,1.6);c.fillStyle='#d4b69a';c.fillRect(1015,560,210,195);c.fillStyle='#b58c70';c.fillRect(1015,705,210,50);c.fillStyle='#efe1c4';c.beginPath();c.ellipse(1140,665,31,47,0,0,PI*2);c.fill();c.fillStyle='#74414b';c.beginPath();c.ellipse(1140,631,25,10,0,0,PI*2);c.fill();c.fillRect(1060,665,34,45);c.fillStyle='#e9bd55';c.beginPath();c.arc(1077,662,17,0,PI*2);c.fill();c.restore();for(let k=0;k<4;k++){let a=k*PI/2,pts=[];for(let j=0;j<25;j++){let th=a+.13+j*.05;pts.push([q[0]+r*Math.cos(th),q[1]+r*Math.sin(th)]);}line(c,pts,'#743441',3);}line(c,[[q[0]-25,q[1]],[q[0]+25,q[1]]],'#397c79',2);line(c,[[q[0],q[1]-25],[q[0],q[1]+25]],'#397c79',2);text(c,'FIND THE MOMENT',110,850,25,'#73666b','CamMono',seg(t,1.5,2.4));c.restore();}
+let macro=seg(t,10.5,12);if(t>=4.5&&t<11.8){text(c,t<7.5?'01 / ASSEMBLE':'02 / A TACTILE FOCUS',110,235,26,'#743441');if(t>7.5){let u=seg(t,7.5,8.3)*(1-seg(t,8.7,9.1));text(c,'Turn. Notice.',110,330,67,'#302c32','CamSerif',u);}}
+if(t>=11.8&&t<15.7){let a=seg(t,11.8,12.2)*(1-seg(t,15.1,15.7));c.save();c.globalAlpha=a;c.fillStyle='rgba(30,37,40,.86)';c.fillRect(84,170,590,160);text(c,'03 / LET LIGHT IN',110,225,25,'#e5d1bc');text(c,'Eight moving blades.',110,293,41,'#fff5e4','CamSerif');c.restore();}
+// Photo moment: original vector still life on a real card emerging beside the camera.
+let photo=seg(t,16.4,19.4);if(photo>0){let x=mix(925,1310,photo),y=mix(520,510,photo),scale=mix(.2,1,photo);c.save();c.translate(x,y);c.rotate(mix(.12,-.07,photo));c.scale(scale,scale);c.shadowColor='rgba(48,44,50,.22)';c.shadowBlur=25;c.shadowOffsetY=16;c.fillStyle='#fffaf0';c.fillRect(-255,-270,510,585);c.shadowColor='transparent';c.fillStyle='#d4b69a';c.fillRect(-225,-240,450,440);c.fillStyle='#b58c70';c.fillRect(-225,72,450,128);c.fillStyle='#9e6755';c.beginPath();c.ellipse(50,95,105,17,0,0,PI*2);c.fill();c.fillStyle='#efe1c4';c.beginPath();c.ellipse(42,-3,66,99,0,0,PI*2);c.fill();c.fillStyle='#74414b';c.beginPath();c.ellipse(42,-75,53,21,0,0,PI*2);c.fill();c.fillStyle='#74414b';c.fillRect(-130,-5,73,100);c.fillStyle='#e9bd55';c.beginPath();c.arc(-91,-9,37,0,PI*2);c.fill();text(c,'THE ORDINARY, KEPT.',-208,263,22,'#743441');c.restore();}
+if(t>11.7&&t<15.7){text(c,'A SMALL TURN / AN ORIGINAL PRODUCT STUDY',110,95,20,'#eee7da');text(c,'FICTIONAL CAMERA · STYLISED MECHANISM',110,1022,18,'#eee7da');}
+// One photographic flash, tied to the shutter transient.
+let flash=Math.exp(-Math.pow((t-16)/.07,2))*.85;c.fillStyle=`rgba(255,250,240,${flash})`;c.fillRect(0,0,W,H);
+if(t>=20){let a=seg(t,20,20.8);text(c,'A Small Turn',110,270,88,'#302c32','CamSerif',a);text(c,'THE CAMERA WAKES UP',115,330,25,'#743441','CamMono',a);text(c,'Keep a little of today.',110,923,42,'#302c32','CamSerif',a);}
+}
+const api={render,duration:24,width:W,height:H};if(typeof module!=='undefined')module.exports=api;root.SmallTurn=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
