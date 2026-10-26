@@ -1,0 +1,25 @@
+{
+  "name": "over-and-under",
+  "type": "hyperframes:block",
+  "title": "Over and Under",
+  "description": "Rigid persimmon rails and sea-glass crossbars interleave into a diamond-shaped architectural lattice. Fine 2D plans become real procedural 3D geometry, revealed by a rising camera with original synchronized music. Native deterministic Canvas, no video plate.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "abstract",
+    "kinetic",
+    "weave",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/over-and-under.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
