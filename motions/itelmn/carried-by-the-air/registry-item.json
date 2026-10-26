@@ -1,0 +1,25 @@
+{
+  "name": "carried-by-the-air",
+  "type": "hyperframes:block",
+  "title": "Carried by the Air",
+  "description": "A copper winged seed releases from a twig, turns through fine 2D airflow contours, and settles on a small soil island. Original procedural 3D geometry and synchronized music. Stylized botanical motion, not an aerodynamic simulation.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "nature",
+    "seed",
+    "airflow",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/carried-by-the-air.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

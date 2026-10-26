@@ -1,0 +1,27 @@
+(function(root){'use strict';const PI=Math.PI,C=x=>Math.max(0,Math.min(1,x)),E=x=>{x=C(x);return x*x*x*(10+x*(-15+6*x))},L=(a,b,t)=>a+(b-a)*t;
+function state(t){let f=E((t-3)/17.5),land=E((t-17)/3.5),d=Math.max(0,t-4),u=C((t-17)/3.5);let rot=2.2*d-2.2/3*(1-Math.exp(-3*d))-2.2*3.5*(2.5*u**4-3*u**5+u**6);if(t>20.5)rot=2.2*16.5-2.2/3-2.2*3.5*.5;let tilt=L(.1,.04,land)+.18*Math.sin(t*1.1)*Math.sin(PI*f);let ground=Math.hypot(.24*Math.sin(tilt),.20*Math.cos(tilt))-.02*Math.sin(tilt)-.01*Math.cos(tilt);return{x:L(-1.45,1.15,f)-.6*(1-E((t-3)/1.3))+.65*Math.sin(PI*f*2)*Math.sin(PI*f),y:L(2.25,ground,f)+.4*(1-E((t-3)/1.3)),z:.48*Math.sin(PI*f*3),angle:rot,tilt,f,land,ground}}
+function render(ctx,t){t=Math.max(0,Math.min(24,t));const s=state(t),faces=[],bounds=[];ctx.clearRect(0,0,1920,1080);ctx.fillStyle='#f4f0e5';ctx.fillRect(0,0,1920,1080);let orbit=E((t-6)/11),yaw=L(-.45,.22,orbit),el=L(.36,.54,E((t-14)/7)),scale=177,cy=760;
+function proj(p){let x=p[0]*Math.cos(yaw)-p[2]*Math.sin(yaw),z=p[0]*Math.sin(yaw)+p[2]*Math.cos(yaw);return[900+x*scale,cy+z*Math.sin(el)*scale-p[1]*Math.cos(el)*scale,z*Math.cos(el)+p[1]*Math.sin(el)]}
+function poly(ps,col,a=1){ctx.globalAlpha=a;ctx.beginPath();ps.forEach((p,i)=>{let q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])});ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=col;ctx.lineWidth=.45;ctx.stroke();ctx.globalAlpha=1}
+function line(ps,col,w,a=1){ctx.globalAlpha=a;ctx.beginPath();ps.forEach((p,i)=>{let q=proj(p);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])});ctx.strokeStyle=col;ctx.lineWidth=w;ctx.stroke();ctx.globalAlpha=1}
+function face(ps,col,tracked=true){faces.push({ps,col,z:ps.reduce((a,p)=>a+proj(p)[2],0)/ps.length});if(tracked)bounds.push(...ps)}
+function tube(a,b,r,col){let d=b.map((v,i)=>v-a[i]),n=Math.hypot(...d);d=d.map(v=>v/n);let u=Math.abs(d[1])<.9?[d[2],0,-d[0]]:[1,0,0];let m=Math.hypot(...u);u=u.map(v=>v/m);let v=[d[1]*u[2]-d[2]*u[1],d[2]*u[0]-d[0]*u[2],d[0]*u[1]-d[1]*u[0]];let ring=p=>Array.from({length:10},(_,i)=>p.map((x,k)=>x+r*(u[k]*Math.cos(i*PI/5)+v[k]*Math.sin(i*PI/5))));let aa=ring(a),bb=ring(b);for(let i=0;i<10;i++)face([aa[i],bb[i],bb[(i+1)%10],aa[(i+1)%10]],i<5?col:'#493b2c');}
+// Soil island is a genuine shallow faceted volume, with 2D engraved soil arcs.
+let soil=[];for(let i=0;i<64;i++){let a=i*PI/32;soil.push([1.25+1.65*Math.cos(a),0,.95*Math.sin(a)])}poly(soil,'#d4c5a8');for(let i=0;i<64;i++){let a=soil[i],b=soil[(i+1)%64];poly([a,b,[b[0],-.13,b[2]],[a[0],-.13,a[2]]],i<32?'#b7a488':'#c5b395')}
+for(let i=0;i<15;i++){let x=.02+(i%5)*.5,z=-.65+Math.floor(i/5)*.55;line([[x,0.006,z],[x+.17,0.006,z+.035]],'#907f64',1.1,.55)}
+// Airflow contours exist in illustration space, not opaque 3D ribbons.
+let wind=E((t-2.2)/1.2)*(1-E((t-18)/2.5));for(let j=0;j<7;j++){ctx.beginPath();for(let k=0;k<=90;k++){let x=160+k*17,y=280+j*61+24*Math.sin(k*.06+t*.33+j*.4);k?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.strokeStyle='#698575';ctx.globalAlpha=wind*.12;ctx.lineWidth=1.2;ctx.stroke();let u=((t*.12+j*.14)%1),x=160+1530*u,y=280+j*61+24*Math.sin(u*90*.06+t*.33+j*.4);ctx.globalAlpha=wind*.48;ctx.fillStyle='#698575';ctx.beginPath();ctx.arc(x,y,2.7,0,PI*2);ctx.fill()}ctx.globalAlpha=1;
+// Twig precisely meets seed nut before release.
+tube([-3.9,2.18,.04],[-2.9,2.48,.02],.07,'#76523a');tube([-2.9,2.48,.02],[-2.05,2.65,0],.032,'#8c6748');tube([-3.2,2.39,.025],[-3.34,2.85,.03],.022,'#8c6748');
+function tr(p){let x=p[0],y=p[1],z=p[2];let xx=x*Math.cos(s.tilt)-y*Math.sin(s.tilt),yy=x*Math.sin(s.tilt)+y*Math.cos(s.tilt);return[s.x+xx*Math.cos(s.angle)-z*Math.sin(s.angle),s.y+yy,s.z+xx*Math.sin(s.angle)+z*Math.cos(s.angle)]}
+function wing(u,v){let width=.43*Math.sin(PI*u)**.7;return tr([u*1.87,.055*Math.sin(PI*u)+.13*v*v*Math.sin(PI*u),width*v])}
+let shadow=proj([s.x,0,s.z]);ctx.fillStyle='#69513b';ctx.globalAlpha=.08+.12*s.land;ctx.beginPath();ctx.ellipse(shadow[0],shadow[1],L(80,32,s.land),L(18,9,s.land),0,0,PI*2);ctx.fill();ctx.globalAlpha=1;
+for(let i=0;i<28;i++)for(let j=0;j<6;j++){let u=i/28,v=-1+j/3,un=(i+1)/28,vn=v+1/3;face([wing(u,v),wing(un,v),wing(un,vn),wing(u,vn)],['#b77840','#c78949','#d69a54','#dfae66','#d9a05a','#c88b48'][j])}
+// Nut is an ellipsoid with actual depth, changing silhouette under autorotation.
+for(let i=0;i<12;i++)for(let j=0;j<20;j++){function p(a,b){return tr([.02+.24*Math.sin(a)*Math.cos(b),.01+.20*Math.cos(a),.17*Math.sin(a)*Math.sin(b)])}let a=i*PI/12,b=j*PI/10;face([p(a,b),p(a+PI/12,b),p(a+PI/12,b+PI/10),p(a,b+PI/10)],['#765035','#8d603d','#a57548','#bd8d56'][Math.floor(j/5)])}
+faces.sort((a,b)=>a.z-b.z);for(let f of faces)poly(f.ps,f.col);
+// Fine botanical ribs on the visible wing surface.
+line(Array.from({length:25},(_,i)=>wing(i/24,0)),'#8b5d35',1.5,.65);for(let i=3;i<25;i+=3){let u=i/28;line([wing(u,0),wing(Math.min(.99,u+.055),.85)],'#8b5d35',.9,.35);line([wing(u,0),wing(Math.min(.99,u+.055),-.85)],'#8b5d35',.9,.35)}
+let title=E((t-.2)/.8)*(1-E((t-2.2)/.6))+E((t-21.5)/.8);ctx.globalAlpha=title;ctx.fillStyle='#344b42';ctx.font='64px SeedSerif';ctx.fillText('Carried by the Air',112,112);ctx.globalAlpha=1;
+let ps=bounds.map(proj);return{...s,polygons:faces.length,bounds:{left:Math.min(...ps.map(p=>p[0])),right:Math.max(...ps.map(p=>p[0])),top:Math.min(...ps.map(p=>p[1])),bottom:Math.max(...ps.map(p=>p[1]))},seedLowest:s.y-s.ground,attached:t<=3}}
+const api={render,state,duration:24,width:1920,height:1080};if(typeof module!=='undefined')module.exports=api;root.Seed=api;})(typeof window!=='undefined'?window:globalThis);
