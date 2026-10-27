@@ -1,0 +1,27 @@
+{
+  "name": "quiet-is-not-silence",
+  "type": "hyperframes:block",
+  "title": "降噪，不等于静音",
+  "description": "为什么戴上降噪耳机，轰鸣变弱，人声却可能还在？30秒中文科普：真实可播放的耳罩几何剖面、同一位置声压叠加，以及相同时间误差对不同频率的影响。原创教学音效；非产品性能实测。参考：Sony https://helpguide.sony.net/mdr/2984/v1/en/contents/TP1001856910.html ; Bose https://www.bose.com/stories/how-do-noise-cancelling-headphones-work ; Ole Wolff https://owolff.com/en/application-support/active-noise-cancellation/ ; Qualcomm https://www.qualcomm.com/audio/technologies/active-noise-cancellation 。详细主张对应见 SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 30,
+  "tags": [
+    "science",
+    "anc",
+    "headphones",
+    "education",
+    "chinese",
+    "3d",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/quiet-is-not-silence.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
