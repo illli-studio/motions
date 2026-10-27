@@ -1,0 +1,26 @@
+{
+  "name": "more-water-more-lift",
+  "type": "hyperframes:block",
+  "title": "钢铁会沉，钢船为什么能浮？",
+  "description": "29秒中文科普：空心船形能在进水前排开更多水。浮力等于排开水的重量，静止漂浮时与船和载荷总重平衡；加货后吃水加深。简化非等比例示意，无旁白，原创几何与声音。依据NASA https://www.grc.nasa.gov/www/k-12/WindTunnel/Activities/buoy_Archimedes.html 和NOAA https://www.noaa.gov/office-education/outreach-communication/hands-on-science-activities/build-a-boat ，完整来源及边界见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 29,
+  "tags": [
+    "science",
+    "buoyancy",
+    "physics",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/more-water-more-lift.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
