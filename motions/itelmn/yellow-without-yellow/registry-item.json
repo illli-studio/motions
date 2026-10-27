@@ -1,0 +1,27 @@
+{
+  "name": "yellow-without-yellow",
+  "type": "hyperframes:block",
+  "title": "屏幕里的黄色，藏在哪儿？",
+  "description": "28秒中文科普：以常见 RGB 屏幕为例，透视几何子像素逐个点亮，退远展示空间整合，再用定性光谱解释“看起来相似，光谱可以不同”。不是红光与绿光生成新的黄色波长。原创教学音效；字幕与图示独立讲清机制。RGB排列/光谱均为简化示意，不代表所有屏幕或精确配色。出处：Exploratorium https://annex.exploratorium.edu/colorfest/whatiscolor.html ；MIT https://designftw.mit.edu/lectures/color/ ；Sharp RGBY反例 https://global.sharp/corporate/news/100531_1.html 。详见 SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28,
+  "tags": [
+    "science",
+    "rgb",
+    "color",
+    "education",
+    "chinese",
+    "3d",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/yellow-without-yellow.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
