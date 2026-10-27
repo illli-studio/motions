@@ -1,0 +1,26 @@
+{
+  "name": "water-from-the-air",
+  "type": "hyperframes:block",
+  "title": "冰杯外面的水，从哪儿来？",
+  "description": "28秒中文科普：冰杯外壁的水来自空气中的水蒸气。完整密闭杯对照、气态符号与外壁凝结图示解释露点条件；过程加速，分子与水滴非等比例，非实拍实验。原创教学音效，无旁白。事实来源 NOAA https://www.noaa.gov/jetstream/ll-sweatin 和 https://gml.noaa.gov/ozwv/wvap/instrument.html 。详见 SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28,
+  "tags": [
+    "science",
+    "condensation",
+    "education",
+    "chinese",
+    "3d",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/water-from-the-air.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
