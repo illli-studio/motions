@@ -1,0 +1,26 @@
+{
+  "name": "narrower-tube-higher-water",
+  "type": "hyperframes:block",
+  "title": "细管里的水，为何爬得更高？",
+  "description": "27秒原创毛细作用科普：比较同水同润湿条件下两支玻璃圆管的平衡水位，再用弯月面与接触线表面张力向上分量解释液柱为何能被支持。窄管平衡高度更高，不代表上升更快，也不是无限上升。几何、尺寸、时间和颜色均为示意；理想圆管忽略弯月面体积。真实XYZ原生几何与中文图解共同解释，原创音效无旁白。来源：USGS https://www.usgs.gov/water-science-school/science/capillary-action-and-water 及OpenStax College Physics2e11.8，详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 27,
+  "tags": [
+    "science",
+    "capillary",
+    "water",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/narrower-tube-higher-water.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
