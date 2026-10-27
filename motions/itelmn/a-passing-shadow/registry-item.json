@@ -1,0 +1,25 @@
+{
+  "name": "a-passing-shadow",
+  "type": "hyperframes:block",
+  "title": "A Passing Shadow",
+  "description": "A stylized moon casts a moving shadow across a curved miniature world, then light returns. Original deterministic 3D geometry, 2D orbital lines and original music. Not to scale; not a scientific simulation.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24,
+  "tags": [
+    "3d",
+    "orbit",
+    "shadow",
+    "science-inspired",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/a-passing-shadow.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
