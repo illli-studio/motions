@@ -1,0 +1,26 @@
+{
+  "name": "orbit-is-continuous-fall",
+  "type": "hyperframes:block",
+  "title": "卫星为什么不会掉下来？",
+  "description": "28秒原创科普：卫星并非没有重力，而是在持续自由落体。以真实XYZ地球和卫星几何、切向速度箭头、向内引力及轨迹对比，解释轨道为什么弯曲。理想圆轨道，本模型忽略引力以外的其他力（含空气阻力）；距离、速度、卫星尺寸均为示意非比例。声景为原创非写实配乐，无旁白。事实来源NASA Glenn Free Falling Objects https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/ 与NASA Basics of Space Flight Chapter3 https://science.nasa.gov/learn/basics-of-space-flight/chapter3-4/ ，详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28,
+  "tags": [
+    "science",
+    "orbit",
+    "gravity",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/orbit-is-continuous-fall.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
