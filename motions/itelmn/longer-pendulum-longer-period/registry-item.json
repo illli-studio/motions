@@ -1,0 +1,26 @@
+{
+  "name": "longer-pendulum-longer-period",
+  "type": "hyperframes:block",
+  "title": "长摆，为什么摆得慢？",
+  "description": "28秒原创科普：两个单摆以相同小角度释放，通过完整归位计数展示摆长4倍、周期约2倍。再以局部角加速度示意解释因果；慢指来回节奏，而非所有瞬时线速度。真实XYZ几何与二维测量、相位图共同解释。同重力、小角度、忽略阻力的理想单摆简化示意；原创声景，无旁白。来源：University of Cambridge NRICH https://nrich.maths.org/problems/simple-pendulum 与 OpenStax Physics §5.5 https://openstax.org/books/physics/pages/5-5-simple-harmonic-motion ，详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28,
+  "tags": [
+    "science",
+    "pendulum",
+    "mechanics",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/longer-pendulum-longer-period.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
