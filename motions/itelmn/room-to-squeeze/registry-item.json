@@ -1,0 +1,26 @@
+{
+  "name": "room-to-squeeze",
+  "type": "hyperframes:block",
+  "title": "空气能压缩，水为什么难压？",
+  "description": "27秒中文科普：封口无针筒在相同活塞面积、相同定性施力下，空气明显压缩，水体积几乎不变。微观示意解释压缩改变粒子间距而非大小，并展示空气释放回弹。水不是绝对不可压缩。所有尺寸、粒子数量和运动非等比例、非实测。原创几何和声音，无旁白。依据ASU https://pirt.asu.edu/demos/2B20.71 、IOP https://spark.iop.org/feeling-springiness-air 及USGS https://www.usgs.gov/water-science-school/science/water-compressibility ，完整出处见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 27,
+  "tags": [
+    "science",
+    "physics",
+    "compression",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/room-to-squeeze.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
