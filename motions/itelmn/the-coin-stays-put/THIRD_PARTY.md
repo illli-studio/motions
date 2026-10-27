@@ -1,0 +1,1 @@
+Noto Serif CJK SC Regular subset, SIL OFL1.1; assets/CJK-LICENSE.txt. OpticsSerif is a local alias. GSAP3.15.0 license/readme preserved in assets. Original animation, geometry, text, music and synthesis code MIT-0. No third-party images or recordings.

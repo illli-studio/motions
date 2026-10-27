@@ -1,0 +1,26 @@
+{
+  "name": "the-coin-stays-put",
+  "type": "hyperframes:block",
+  "title": "硬币没动，为什么看起来变浅？",
+  "description": "28秒原创中文光学科普：水中硬币的光在平水面折射，出水远离法线，反向延长产生较浅的局部视位置。硬币本身不动。真实3D浅池与二维光路联动。平水面/相邻光线/非等比例示意，忽略容器壁，视位置随观察角度变化。来源：AMNH https://www.amnh.org/explore/ology/physics/see-the-light2/refraction 与FSU及Oregon State，详见SOURCES.md。原创声音与中文图示，无旁白。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28,
+  "tags": [
+    "science",
+    "refraction",
+    "optics",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/the-coin-stays-put.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

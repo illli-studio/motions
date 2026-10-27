@@ -1,0 +1,2 @@
+# Export and verification boundaries
+Official HyperFrames CLI checks were not run: a prior telemetry-related invocation was denied and was not retried or bypassed. This is not an official CLI certificate. Native browser playback and controls are tested directly; MP4 is independently exported using the same film.js render(ctx,t) on @napi-rs/canvas at 1080p30 and FFmpeg. Platform package contains only native code, fonts, GSAP and audio. Full MP4 is chat-only. Objective audio metrics, decode and platform load/control checks do not claim subjective listening.
