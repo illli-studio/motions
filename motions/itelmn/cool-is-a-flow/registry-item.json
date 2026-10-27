@@ -1,0 +1,26 @@
+{
+  "name": "cool-is-a-flow",
+  "type": "hyperframes:block",
+  "title": "同样室温，金属为什么摸起来更凉？",
+  "description": "29秒中文科普：充分放置后，金属与木材可以同温，触感却不同。以22°C示意初始条件，比较更暖的手向材料传热以及接触面的变化。非等比例、定性示意，非实测；短时触感还与接触条件、厚度和热感受率有关。原创几何及教学音效，无旁白。依据Exploratorium https://www.exploratorium.edu/snacks/cold-metal 和Illinois Physics Van https://van.physics.illinois.edu/ask/listing/44029 ，详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 29,
+  "tags": [
+    "science",
+    "heat-transfer",
+    "education",
+    "chinese",
+    "3d",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/cool-is-a-flow.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
