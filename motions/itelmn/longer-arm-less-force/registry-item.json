@@ -1,0 +1,26 @@
+{
+  "name": "longer-arm-less-force",
+  "type": "hyperframes:block",
+  "title": "长扳手，为什么更省力？",
+  "description": "26秒原创中文科普：垂直力臂与力矩，长短扳手同力矩对比，以及同转角手端路程解释。非操作建议，几何和速度简化，忽略变形损耗。依据NASA Glenn https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/torque-moment/ 及Guelph大学与OpenStax，详见SOURCES.md。无旁白，清楚图示与原创声音。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 26,
+  "tags": [
+    "science",
+    "torque",
+    "mechanics",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/longer-arm-less-force.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
