@@ -1,0 +1,4 @@
+# Playback and export evidence
+The composition uses a paused synchronous GSAP timeline registered on window.__timelines and a procedural Canvas 3D sphere mesh (96 latitude ×192 longitude cells), with analytic Lambert-like lighting. Ordinary phases derive light vector [sin(theta),0,-cos(theta)] from the same angle as orbital position. It contains no prerecorded visuals.
+
+Local MP4 export uses the same film.js renderer through @napi-rs/canvas at native1920×1080,30fps and FFmpeg H264/AAC. This is an independent export, NOT a claim of official HyperFrames CLI render/lint/inspect success. Official CLI checks were not run because the previously denied telemetry-bearing command must not be retried or bypassed. Native cloud-browser preview, deterministic seek, full MP4 decode and independent geometry/media audits are the executed checks.

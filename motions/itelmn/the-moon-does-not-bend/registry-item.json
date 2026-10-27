@@ -1,0 +1,26 @@
+{
+  "name": "the-moon-does-not-bend",
+  "type": "hyperframes:block",
+  "title": "月亮为什么会变弯？",
+  "description": "29.5秒中文科普：月相不是地球的影子，而是我们观看月球受光半球的角度改变。真实球面几何与空间位置图同步解释蛾眉、上弦和满月，单独展示月食需要特殊对齐。大小、距离、速度非等比例；轨道和地形简化，北向朝上示意。原创非写实教学声音，无旁白。NASA出处：https://science.nasa.gov/moon/moon-phases/ ；https://science.nasa.gov/moon/top-moon-questions/ ；https://science.nasa.gov/moon/eclipses/ 。详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 29.5,
+  "tags": [
+    "science",
+    "moon",
+    "education",
+    "chinese",
+    "3d",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/the-moon-does-not-bend.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
