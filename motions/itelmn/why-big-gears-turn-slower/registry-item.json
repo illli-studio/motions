@@ -1,0 +1,26 @@
+{
+  "name": "why-big-gears-turn-slower",
+  "type": "hyperframes:block",
+  "title": "大齿轮，为什么转得慢？",
+  "description": "25秒原创机械科普：20齿主动轮带动40齿从动轮。通过接触近景和白点计圈，解释同时间通过啮合处的齿数相同，所以大轮转速减半、转向相反。固定轴同模数外啮合简化示意，非制造图纸，不泛指所有传动。真实XYZ挤出渐开线几何与2D计数共同解释；原声，无旁白。来源：UC San Diego MAE3 https://mae3.eng.ucsd.edu/machine-design/gear-ratios 和 LEGO Education，见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 25,
+  "tags": [
+    "science",
+    "gears",
+    "mechanics",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/why-big-gears-turn-slower.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+/* Original gear experiment: deterministic involute profiles extruded in XYZ. */
+(function(root){'use strict';
+const PI=Math.PI,TAU=PI*2,D=25,W=1920,H=1080;
+const C={bg:'#211D35',ink:'#F3F0FC',muted:'#B5AEC9',lime:'#D3ED75',lav:'#B3B4F2',red:'#F292A6',grid:'#39334F'};
+const sat=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=sat(x);return x*x*(3-2*x)},mix=(a,b,q)=>a+(b-a)*q;
+function txt(c,s,x,y,n=40,col=C.ink){c.font=`600 ${n}px GearSans, sans-serif`;c.fillStyle=col;c.textBaseline='alphabetic';c.fillText(s,x,y)}
+function line(c,a,b,col,w=3){c.beginPath();c.moveTo(a[0],a[1]);c.lineTo(b[0],b[1]);c.strokeStyle=col;c.lineWidth=w;c.stroke()}
+function poly(c,p,col,seam=false){c.beginPath();p.forEach((v,i)=>i?c.lineTo(v[0],v[1]):c.moveTo(v[0],v[1]));c.closePath();c.fillStyle=col;c.fill();if(seam){c.strokeStyle=col;c.lineWidth=.7;c.lineJoin='round';c.stroke()}}
+function tint(h,k){return '#'+h.slice(1).match(/../g).map(v=>Math.max(0,Math.min(255,Math.round(parseInt(v,16)*k))).toString(16).padStart(2,'0')).join('')}
+function inv(a){return Math.tan(a)-a}
+function gearProfile(N){let r=N/2,rb=r*Math.cos(PI/9),ra=r+1,rf=r-1.25;let out=[];let half=(rr)=>PI/(2*N)*.98+inv(PI/9)-inv(Math.acos(rb/Math.max(rb,rr)));let rootAng=half(Math.max(rf,rb));for(let k=0;k<N;k++){let mid=k*TAU/N,prev=mid-TAU/N+rootAng;for(let j=1;j<=3;j++){let a=mix(prev,mid-rootAng,j/3);out.push([rf*Math.cos(a),rf*Math.sin(a)])}if(rf<rb)out.push([rb*Math.cos(mid-rootAng),rb*Math.sin(mid-rootAng)]);for(let j=1;j<=8;j++){let rr=mix(Math.max(rf,rb),ra,j/8),a=mid-half(rr);out.push([rr*Math.cos(a),rr*Math.sin(a)])}for(let j=1;j<=4;j++){let a=mid-half(ra)+2*half(ra)*j/4;out.push([ra*Math.cos(a),ra*Math.sin(a)])}for(let j=7;j>=0;j--){let rr=mix(Math.max(rf,rb),ra,j/8),a=mid+half(rr);out.push([rr*Math.cos(a),rr*Math.sin(a)])}if(rf<rb)out.push([rf*Math.cos(mid+rootAng),rf*Math.sin(mid+rootAng)]);}return out}
+const profiles={20:gearProfile(20),40:gearProfile(40)};
+function view(ox,oy,s,az,el){let ca=Math.cos(az),sa=Math.sin(az),ce=Math.cos(el),se=Math.sin(el);return p=>{let u=p[0]*ca-p[1]*sa,v=p[0]*sa+p[1]*ca;return[ox+s*u,oy-s*(v*se+p[2]*ce),-v*ce+p[2]*se]}}
+function face(m,p,col,seam=false){m.push({p,col,seam})}
+function prism(m,out,z,h,col){face(m,out.map(p=>[...p,z+h]),col);for(let i=0;i<out.length;i++){let a=out[i],b=out[(i+1)%out.length];let nx=b[1]-a[1],ny=a[0]-b[0],len=Math.hypot(nx,ny);let shade=.62+.20*Math.max(0,(nx*.4+ny*.8)/len);face(m,[[...a,z],[...b,z],[...b,z+h],[...a,z+h]],tint(col,shade),true)}}
+function disc(m,x,y,r,z,h,col,n=48){prism(m,Array.from({length:n},(_,i)=>[x+r*Math.cos(i*TAU/n),y+r*Math.sin(i*TAU/n)]),z,h,col)}
+function gear(m,N,x,theta,col){const out=profiles[N].map(p=>[x+p[0]*Math.cos(theta)-p[1]*Math.sin(theta),p[0]*Math.sin(theta)+p[1]*Math.cos(theta)]);prism(m,out,0,2.1,col);disc(m,x,0,N*.28,2.101,.28,tint(col,.77));disc(m,x,0,2.5,2.39,.65,'#625D7B');disc(m,x,0,.85,3.05,.12,'#211D35');const a=theta,r=N/2-1.8;disc(m,x+r*Math.cos(a),r*Math.sin(a),.7,2.13,.15,'#FFFFFF',20);}
+function mesh(c,m,P){m.map(f=>{let p=f.p.map(P);return{p,col:f.col,seam:f.seam,d:p.reduce((a,b)=>a+b[2],0)/p.length}}).sort((a,b)=>a.d-b.d).forEach(f=>poly(c,f.p,f.col,f.seam))}
+function strokeArc(c,P,x,r,start,end,col,w=5){c.beginPath();for(let i=0;i<=100;i++){let a=mix(start,end,i/100),p=P([x+r*Math.cos(a),r*Math.sin(a),3.5]);i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1])}c.strokeStyle=col;c.lineWidth=w;c.stroke()}
+function label(c,s,x,y,col=C.ink,n=36){txt(c,s,x,y,n,col)}
+function angles(t){let a;if(t<9.5)a=t*.38;else if(t<10.5)a=mix(9.5*.38,TAU,ease((t-9.5)));else if(t<=20.5)a=TAU+TAU*2*ease((t-10.5)/10);else a=TAU*3;return [a,PI/40-a/2]}
+function heading(c,t){let s1,s2,alpha=1;if(t<5){s1='大齿轮，为什么转得慢？';s2='盯住白色标记：两只齿轮并不同步转一圈。'}else if(t<10.5){s1='啮合处，两轮依次传递运动。';s2='相同时间，两轮通过啮合处的齿数相同。'}else if(t<20.5){s1='小轮转两圈，大轮才转一圈。';s2='这里：20 齿带动 40 齿。白点帮你数圈。'}else{s1='齿数 × 2，转速就 ÷ 2。';s2='一对外啮合齿轮：齿数越多，转速越慢；方向相反。'}for(let cut of [5,10.5,20.5])if(Math.abs(t-cut)<.22)alpha=Math.abs(t-cut)/.22;c.save();c.globalAlpha*=alpha;txt(c,s1,82,178,72);txt(c,s2,86,248,35,C.muted);c.restore()}
+function render(c,time){const t=Math.max(0,Math.min(D,time));c.save();c.fillStyle=C.bg;c.fillRect(0,0,W,H);for(let x=50;x<W;x+=80)line(c,[x,310],[x,965],C.grid,1);for(let y=340;y<970;y+=80)line(c,[50,y],[1870,y],C.grid,1);c.fillStyle=C.bg;c.fillRect(0,0,W,296);txt(c,'齿 轮 观 察 室',84,73,25,C.muted);txt(c,'MOTION / 20 : 40',1540,73,24,C.muted);line(c,[84,100],[1836,100],C.grid,2);heading(c,t);
+let close=ease((t-5)/1.15)*(1-ease((t-9.2)/1.3));let top=ease((t-9.2)/1.3)*(1-ease((t-20.5)/1.4));let P=view(mix(890,980,close),mix(620,690,close),mix(14,34,close),mix(-.12,0,top),mix(.98,PI/2,top));let [a,b]=angles(t),m=[];gear(m,20,-10,a,C.lime);gear(m,40,20,b,C.lav);c.save();c.beginPath();c.rect(40,300,1840,655);c.clip();mesh(c,m,P);
+// Thin pitch circles are explanatory geometry, not a second moving object.
+if(close>.5){c.save();c.globalAlpha=(close-.5)*1.2;c.setLineDash([8,9]);strokeArc(c,P,-10,10,0,TAU,C.lime,2);strokeArc(c,P,20,20,0,TAU,C.lav,2);c.restore();let p=P([0,0,3]);c.beginPath();c.arc(p[0],p[1],62,0,TAU);c.strokeStyle=C.red;c.lineWidth=3;c.stroke()}
+c.restore();if(close<.45){let p1=P([-10,0,3.5]),p2=P([20,0,3.5]);label(c,'主动轮 · 20 齿',p1[0]-126,945,C.lime,34);label(c,'从动轮 · 40 齿',p2[0]-132,945,C.lav,34)}else{c.fillStyle='#211D35';c.fillRect(1042,821,735,126);c.strokeStyle='#625D7B';c.lineWidth=1.5;c.strokeRect(1042,821,735,126);label(c,'局部放大 · 渐开线齿形示意',1070,875,C.muted,30);label(c,'同模数 · 无跳齿',1070,925,C.red,32)}
+if(t>=10.5&&t<20.5){let turns=2*ease((t-10.5)/10);txt(c,turns.toFixed(2)+' 圈',95,410,51,C.lime);txt(c,(turns/2).toFixed(2)+' 圈',1500,410,51,C.lav);txt(c,'逆向',1510,464,28,C.muted)}
+if(t>=20.5){txt(c,'20 齿：2 圈',105,401,46,C.lime);txt(c,'40 齿：1 圈',1390,401,46,C.lav);txt(c,'转速比 2 : 1',93,490,46,C.ink)}
+txt(c,'同模数外啮合示意 · 忽略弹性与间隙影响 · 不代表所有齿轮传动形式',84,1036,26,C.muted);c.restore()}
+const textStrings=['齿 轮 观 察 室','大齿轮，为什么转得慢？','盯住白色标记：两只齿轮并不同步转一圈。','啮合处，两轮依次传递运动。','相同时间，两轮通过啮合处的齿数相同。','小轮转两圈，大轮才转一圈。','这里：20 齿带动 40 齿。白点帮你数圈。','齿数 × 2，转速就 ÷ 2。','一对外啮合齿轮：齿数越多，转速越慢；方向相反。','主动轮 · 20 齿','从动轮 · 40 齿','局部放大 · 渐开线齿形示意','同模数 · 无跳齿','逆向','20 齿：2 圈','40 齿：1 圈','同模数外啮合示意 · 忽略弹性与间隙影响 · 不代表所有齿轮传动形式','圈'];
+const api={render,duration:D,width:W,height:H,textStrings,metadata:{title:'大齿轮，为什么转得慢？',font:'GearSans',keyframes:[3.5,7.2,15.5,20.5,23.5],renderer:'XYZ extruded involute meshes, depth-sorted orthographic camera'},model:{driverTeeth:20,drivenTeeth:40,module:1,pressureAngle:PI/9,centerDistance:30,driverCenter:-10,drivenCenter:20,phase:PI/40,profile:gearProfile,angles}};root.GearScience=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof window!=='undefined'?window:globalThis);
