@@ -1,0 +1,25 @@
+{
+  "name": "finding-north",
+  "type": "hyperframes:block",
+  "title": "Finding North",
+  "description": "A traveler loses a crossing, redraws a route, and unfolds a hinged bridge. Original 22-second perspective geometry with material sound. Fictional wayfinding scene, not a navigation aid.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 22,
+  "tags": [
+    "3d",
+    "story",
+    "compass",
+    "wayfinding",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/finding-north.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
