@@ -1,0 +1,91 @@
+{
+  "name": "back-toward-the-light",
+  "type": "hyperframes:block",
+  "title": "路牌为什么会把车灯的光送回来？",
+  "description": "29.4秒原创知识动画：微棱镜型反光膜为何把光送回光源附近？真实三维正交镜与计算光路解释三次反射，强调平行反向但不一定原路重合，以及真实返回光锥。仅讲微棱镜型，另有微珠型；三面镜方向模型忽略折射与损耗，非等比例。来源：3M路牌逆反射、Thorlabs逆反射棱镜、NASA；完整链接见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 29.4,
+  "tags": [
+    "science",
+    "optics",
+    "retroreflection",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "target": "compositions/back-toward-the-light/LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "README.md",
+      "target": "compositions/back-toward-the-light/README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "RENDER-NOTES.md",
+      "target": "compositions/back-toward-the-light/RENDER-NOTES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "SOURCES.md",
+      "target": "compositions/back-toward-the-light/SOURCES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "target": "compositions/back-toward-the-light/THIRD_PARTY.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "index.html",
+      "target": "compositions/back-toward-the-light/index.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "film.js",
+      "target": "compositions/back-toward-the-light/film.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "hyperframes.json",
+      "target": "compositions/back-toward-the-light/hyperframes.json",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/FONT-OFL.txt",
+      "target": "compositions/back-toward-the-light/assets/FONT-OFL.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-LICENSE.txt",
+      "target": "compositions/back-toward-the-light/assets/GSAP-LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-UPSTREAM-README.md",
+      "target": "compositions/back-toward-the-light/assets/GSAP-UPSTREAM-README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "target": "compositions/back-toward-the-light/assets/gsap.min.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/retro.ttf",
+      "target": "compositions/back-toward-the-light/assets/retro.ttf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/score.mp3",
+      "target": "compositions/back-toward-the-light/assets/score.mp3",
+      "type": "hyperframes:asset"
+    }
+  ]
+}
