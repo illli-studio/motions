@@ -1,0 +1,91 @@
+{
+  "name": "the-disturbance-travels",
+  "type": "hyperframes:block",
+  "title": "声音到了，空气也一路跑来了吗？",
+  "description": "26秒声学科普：三维振膜与空气体积元演示疏密扰动传播，跟踪黄色体积元的局部往返。理想小振幅平面纵波，无背景气流，忽略热运动；小球不是分子，运动放慢且非等比例，音乐为示意。来源：University of Southampton Sound Waves https://blog.soton.ac.uk/soundwaves/wave-basics/the-nature-of-waves/；详见 SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 26,
+  "tags": [
+    "science",
+    "sound",
+    "longitudinal-wave",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "target": "compositions/the-disturbance-travels/LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "README.md",
+      "target": "compositions/the-disturbance-travels/README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "RENDER-NOTES.md",
+      "target": "compositions/the-disturbance-travels/RENDER-NOTES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "SOURCES.md",
+      "target": "compositions/the-disturbance-travels/SOURCES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "target": "compositions/the-disturbance-travels/THIRD_PARTY.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/FONT-OFL.txt",
+      "target": "compositions/the-disturbance-travels/assets/FONT-OFL.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-LICENSE.txt",
+      "target": "compositions/the-disturbance-travels/assets/GSAP-LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-UPSTREAM-README.md",
+      "target": "compositions/the-disturbance-travels/assets/GSAP-UPSTREAM-README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "target": "compositions/the-disturbance-travels/assets/gsap.min.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/score.mp3",
+      "target": "compositions/the-disturbance-travels/assets/score.mp3",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/sound.ttf",
+      "target": "compositions/the-disturbance-travels/assets/sound.ttf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "film.js",
+      "target": "compositions/the-disturbance-travels/film.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "hyperframes.json",
+      "target": "compositions/the-disturbance-travels/hyperframes.json",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "index.html",
+      "target": "compositions/the-disturbance-travels/index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

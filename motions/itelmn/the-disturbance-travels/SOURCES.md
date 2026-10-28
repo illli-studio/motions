@@ -1,0 +1,6 @@
+# Primary sources and boundaries
+1. University of Southampton, Sound Waves, The nature of waves: https://blog.soton.ac.uk/soundwaves/wave-basics/the-nature-of-waves/ (read 2026-10-28).
+Explains linear acoustic disturbance, fluid particles as small volumes containing many molecules; they oscillate about equilibrium while the disturbance travels. Compression and rarefaction correspond to above/below ambient pressure. Oscillation parallel to propagation in air.
+2. University of Southampton ISVR tutorial: https://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-basics-sound.htm
+Model is ideal small-amplitude plane longitudinal sound in still air, not individual molecular thermal trajectories. Parcel lattice is only a schematic sample of fluid volume elements, not gas crystal structure. 3D dimensions, rate and amplitudes exaggerated, sound track explanatory not a microphone recording. No claim about acoustic streaming, wind, large-amplitude shocks, all possible solid waves, or numerical sound speed.
+Visual model u=A sin(kX−ωt), material coordinate X fixed, density proportional to 1/(1+Ak cos(kX−ωt)). Choose A=0.12,k=2π/3.8: Ak≈0.198<1; parcels cannot cross. Wave moves right, highlighted parcel remains bounded.
