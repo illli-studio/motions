@@ -1,6 +1,9 @@
-# Executed checks, 2026-10-28
-Preproduction official HyperFrames0.8.186 export and nativeStudio8812 playback verified with documented HYPERFRAMES_NO_TELEMETRY=1. This run uses owncloud, no paidservices. Newentry scaffolded viaofficialinit blank, finalentrycustom.
-Finalrevision officiallint/check/inspect executed. Lint0warnings0errors; runtime0warnings0errors; layout0warnings0errors. Craftretains1warning:5.495–14.737,9.242s lowglobalmotion. Actualframes/rootdynamicgate showlocalenddisplacement6.2–9.7 followedby intentionalcomparativereadinghold9.7–14.8. This heuristicwarning isretained, notclaimedclean. Motionmodule disabled(samples0); Canvascontrastchecked0. Neither isclaimedcertified.
-Rootviewedactual3compositions andfull29.1s dynamicframe samples; warm/coolinitialambiguity,captionbackground,andtransitionheadingcollisionwerefixed. Finaltimegatepreventssimultaneousold/newheadings; geometrycrossfadeusesliveoffscreenCanvas,notstoredpre-renderassets.
-Native3D isactualxyzvertices/faces projectedbycamera withdepthsorting. Bridgebearinginterfacesmeet atz1.93/2.11/2.30; model notengineeredconstruction. Sourceprimaryaudit andnonsequentialseektestresults retained insourcepackage.
-Officialrender uses screenshotcapture/softwareGPU, nothardwareGPU. FinalMP4 isseparate fromruntime. FullFFmpegdecode,ffprobe,andpeakstatisticsare retained alongside source whencompleted. No voiceover; originalstereosoundincludesexplanatorysonification,notrealbridgerecording. No claimofsubjectivelisteningfrom waveformstatistics.
+# Actual validation status
+- Reworked 21-second visual sequence and reference cues passed root and independent visual/mechanical review. This is not a promise of user satisfaction.
+- Actual Three.js WebGL meshes and materials; no fallback video or frame sequence.
+- Final official low-memory, one-worker export completed 630 frames at native 1920×1080 / 30 fps, 21.000 seconds, with original stereo AAC audio. Full MP4 decode completed without errors; decoded audio peak −8.6 dBFS.
+- First export failed at 36/630; its automatic fallback failed at 195/630. The fresh documented low-memory recovery succeeded. These failures are retained, not hidden.
+- Six official nonsequential native PNG frames at 8.8,16,2,2,16,8.8 produced three pixel-identical repeat pairs.
+- Default cloud interactive WebGL was unavailable. A fresh isolated own-cloud Chromium using documented software ANGLE driver (without security-relaxing flags) subsequently rendered and played native Studio from 00:00 to 00:21, after the export completed. Earlier concurrent attempt crashed with error 9; resource pressure is possible, not proven.
+- Version 1.1.0 publication is pending final release review; existing online version 1.0.0 remains intact.
+- Official lint: 0 errors, 0 warnings. Runtime: 0 errors, 7 ReadPixels performance warnings. Intentional full-bleed Canvas warning retained. Craft warns about the 23 px boundary and infers a 0–3.63 s static stretch, although actual reviewed video shows the wheel moving. DOM contrast: 10 checked, 10 passed. Motion check disabled, 0 samples. Warnings and skipped checks are not presented as clean passes.

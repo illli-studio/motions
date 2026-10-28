@@ -2,90 +2,109 @@
   "name": "room-for-the-bridge",
   "type": "hyperframes:block",
   "title": "桥面，为什么故意留一道缝？",
-  "description": "29.1秒原创知识动画：桥段升温伸长，为什么接缝反而变窄？从道路观察到冷热对照，再看柔性密封与滑动支座配合。真实三维几何与中文图示；温度作用简化，变形放大、过程加速。实际还考虑收缩、徐变等，部分桥采用无缝构造。来源：WSDOT2025桥梁设计手册第9章、TxDOT维护手册，完整出处见SOURCES.md。",
-  "dimensions": {
-    "width": 1920,
-    "height": 1080
-  },
-  "duration": 29.1,
+  "description": "21秒重制版：真实圆轮经过齐平接缝，桥段热胀冷缩使缝宽改变，上滑板与固定底座形成可见相对位移。Three.js原生几何、材质和接触阴影；位移放大、过程加速，一种构造示意，非施工图。实际还考虑收缩、徐变，部分桥采用无缝构造。来源：WSDOT Bridge Design Manual第9章 https://wsdot.wa.gov/publications/manuals/fulltext/M23-50/Chapter9.pdf ，TxDOT Bridge Maintenance Actions。",
+  "duration": 21,
   "tags": [
     "science",
     "engineering",
     "thermal-expansion",
-    "chinese",
-    "canvas",
-    "3d"
+    "threejs",
+    "chinese"
   ],
   "files": [
     {
+      "path": "index.html",
+      "type": "hyperframes:composition",
+      "target": "compositions/room-for-the-bridge/index.html"
+    },
+    {
+      "path": "hyperframes.json",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/hyperframes.json"
+    },
+    {
+      "path": "scene.js",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/scene.js"
+    },
+    {
+      "path": "scene.bundle.js",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/scene.bundle.js"
+    },
+    {
       "path": "LICENSE.txt",
-      "target": "compositions/room-for-the-bridge/LICENSE.txt",
-      "type": "hyperframes:asset"
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/LICENSE.txt"
     },
     {
       "path": "README.md",
-      "target": "compositions/room-for-the-bridge/README.md",
-      "type": "hyperframes:asset"
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/README.md"
+    },
+    {
+      "path": "SOURCES.md",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/SOURCES.md"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/THIRD_PARTY.md"
+    },
+    {
+      "path": "assets/three.module.js",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/three.module.js"
+    },
+    {
+      "path": "assets/three.core.js",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/three.core.js"
+    },
+    {
+      "path": "assets/THREE-LICENSE.txt",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/THREE-LICENSE.txt"
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/gsap.min.js"
+    },
+    {
+      "path": "assets/GSAP-LICENSE.txt",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/GSAP-LICENSE.txt"
+    },
+    {
+      "path": "assets/GSAP-UPSTREAM-README.md",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/GSAP-UPSTREAM-README.md"
+    },
+    {
+      "path": "assets/bridge.ttf",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/bridge.ttf"
+    },
+    {
+      "path": "assets/FONT-OFL.txt",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/FONT-OFL.txt"
+    },
+    {
+      "path": "assets/score.mp3",
+      "type": "hyperframes:asset",
+      "target": "compositions/room-for-the-bridge/assets/score.mp3"
     },
     {
       "path": "RENDER-NOTES.md",
       "target": "compositions/room-for-the-bridge/RENDER-NOTES.md",
       "type": "hyperframes:asset"
-    },
-    {
-      "path": "SOURCES.md",
-      "target": "compositions/room-for-the-bridge/SOURCES.md",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "THIRD_PARTY.md",
-      "target": "compositions/room-for-the-bridge/THIRD_PARTY.md",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "index.html",
-      "target": "compositions/room-for-the-bridge/index.html",
-      "type": "hyperframes:composition"
-    },
-    {
-      "path": "film.js",
-      "target": "compositions/room-for-the-bridge/film.js",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "hyperframes.json",
-      "target": "compositions/room-for-the-bridge/hyperframes.json",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/FONT-OFL.txt",
-      "target": "compositions/room-for-the-bridge/assets/FONT-OFL.txt",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/GSAP-LICENSE.txt",
-      "target": "compositions/room-for-the-bridge/assets/GSAP-LICENSE.txt",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/GSAP-UPSTREAM-README.md",
-      "target": "compositions/room-for-the-bridge/assets/GSAP-UPSTREAM-README.md",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/gsap.min.js",
-      "target": "compositions/room-for-the-bridge/assets/gsap.min.js",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/bridge.ttf",
-      "target": "compositions/room-for-the-bridge/assets/bridge.ttf",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/score.mp3",
-      "target": "compositions/room-for-the-bridge/assets/score.mp3",
-      "type": "hyperframes:asset"
     }
-  ]
+  ],
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  }
 }
