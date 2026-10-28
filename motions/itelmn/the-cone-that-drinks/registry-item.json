@@ -1,0 +1,91 @@
+{
+  "name": "the-cone-that-drinks",
+  "type": "hyperframes:block",
+  "title": "松果遇水，为什么会合拢？",
+  "description": "28.8秒自然机制科普：成熟、曾张开的松果湿润合拢，干燥再张开。组织吸水后纵向伸长不同，鳞片主要在基部弯曲。三维松果和双色组织简化模型解释被动材料响应。结构非等比例、过程已加速；真实组织比双层模型复杂。来源：Reyssat与Mahadevan2009 https://pmc.ncbi.nlm.nih.gov/articles/PMC2838359/；2022研究 https://pmc.ncbi.nlm.nih.gov/articles/PMC9284161/；完整出处见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28.8,
+  "tags": [
+    "science",
+    "nature",
+    "pinecone",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "target": "compositions/the-cone-that-drinks/LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "README.md",
+      "target": "compositions/the-cone-that-drinks/README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "RENDER-NOTES.md",
+      "target": "compositions/the-cone-that-drinks/RENDER-NOTES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "SOURCES.md",
+      "target": "compositions/the-cone-that-drinks/SOURCES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "target": "compositions/the-cone-that-drinks/THIRD_PARTY.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "index.html",
+      "target": "compositions/the-cone-that-drinks/index.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "film.js",
+      "target": "compositions/the-cone-that-drinks/film.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "hyperframes.json",
+      "target": "compositions/the-cone-that-drinks/hyperframes.json",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/FONT-OFL.txt",
+      "target": "compositions/the-cone-that-drinks/assets/FONT-OFL.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-LICENSE.txt",
+      "target": "compositions/the-cone-that-drinks/assets/GSAP-LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-UPSTREAM-README.md",
+      "target": "compositions/the-cone-that-drinks/assets/GSAP-UPSTREAM-README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "target": "compositions/the-cone-that-drinks/assets/gsap.min.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/cone.ttf",
+      "target": "compositions/the-cone-that-drinks/assets/cone.ttf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/score.mp3",
+      "target": "compositions/the-cone-that-drinks/assets/score.mp3",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

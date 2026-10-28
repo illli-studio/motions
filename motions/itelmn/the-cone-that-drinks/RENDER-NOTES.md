@@ -1,0 +1,2 @@
+Native meshes rendered at absolute timeline time; deterministic closed-form motion. Single canvas means official DOM text WCAG counts do not audit painted Chinese labels. Motion sidecar checks are not asserted. Software screenshot capture accepted; no claim of GPU capture.
+Source includes offline Python audio synthesis only as an editable production tool; it does not masquerade as playable runtime. Runtime needs only HTML/JS/font/MP3/licenses/docs.
