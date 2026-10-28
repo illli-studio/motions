@@ -1,0 +1,26 @@
+{
+  "name": "more-area-less-terminal-speed",
+  "type": "hyperframes:block",
+  "title": "同样重，降落伞为什么慢？",
+  "description": "29秒原创空气阻力科普：同总质量、静风、同空气密度与阻力系数，先比较同速时迎风面积与阻力，再展示从静止下降时阻力增加并趋近重力。理想条件下面积4倍、终端速度一半；不代表重力减小，也不是所有真实降落伞的固定规律。真XYZ伞面、绳索和载荷与中文图示共同解释；原创音效无旁白。非等比例、时间及参数为示意。来源：NASA Glenn Falling Object with Air Resistance、Drag Coefficient，https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/falling-object-with-air-resistance/，详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 29,
+  "tags": [
+    "science",
+    "drag",
+    "parachute",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/more-area-less-terminal-speed.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
