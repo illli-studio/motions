@@ -1,0 +1,91 @@
+{
+  "name": "guided-into-mesh",
+  "type": "hyperframes:block",
+  "title": "拉链头为什么能把两排齿合上？",
+  "description": "28.5秒日常机械科普：Y形导槽引导链齿，交错齿头形成配合；反向沿分叉路径分开。三维织带与空导槽剖面、放大齿头及原创建构音效。结构与运动简化，非制造尺寸；配合关系不是装配轨迹，不同拉链齿形有差异。来源：YKK结构教育 https://www.ykk.com/english/ykk/tech/01.html；详见SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 28.5,
+  "tags": [
+    "science",
+    "mechanism",
+    "zipper",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "target": "compositions/guided-into-mesh/LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "README.md",
+      "target": "compositions/guided-into-mesh/README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "RENDER-NOTES.md",
+      "target": "compositions/guided-into-mesh/RENDER-NOTES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "SOURCES.md",
+      "target": "compositions/guided-into-mesh/SOURCES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "target": "compositions/guided-into-mesh/THIRD_PARTY.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "index.html",
+      "target": "compositions/guided-into-mesh/index.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "film.js",
+      "target": "compositions/guided-into-mesh/film.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "hyperframes.json",
+      "target": "compositions/guided-into-mesh/hyperframes.json",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/FONT-OFL.txt",
+      "target": "compositions/guided-into-mesh/assets/FONT-OFL.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-LICENSE.txt",
+      "target": "compositions/guided-into-mesh/assets/GSAP-LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-UPSTREAM-README.md",
+      "target": "compositions/guided-into-mesh/assets/GSAP-UPSTREAM-README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "target": "compositions/guided-into-mesh/assets/gsap.min.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/zip.ttf",
+      "target": "compositions/guided-into-mesh/assets/zip.ttf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/score.mp3",
+      "target": "compositions/guided-into-mesh/assets/score.mp3",
+      "type": "hyperframes:asset"
+    }
+  ]
+}
