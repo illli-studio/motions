@@ -1,0 +1,46 @@
+/* Original browser-native polygonal 3D science film. MIT-0. Explicit-time only. */
+(function(root){'use strict';
+const D=29.1,C={sand:'#E9D7B6',ink:'#243D43',hot:'#C75A32',cool:'#5D8394',cream:'#F7F0DD',road:'#3E4745',steel:'#94A6A3',dark:'#172C31'};
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),smooth=v=>{v=clamp(v);return v*v*(3-2*v)},mix=(a,b,v)=>a+(b-a)*v;
+function path(c,p,fill,stroke,w=1){c.beginPath();p.forEach((q,i)=>i?c.lineTo(...q):c.moveTo(...q));c.closePath();if(fill){c.fillStyle=fill;c.fill()}if(stroke){c.strokeStyle=stroke;c.lineWidth=w;c.stroke()}}
+function line(c,a,b,col,w=3){c.beginPath();c.moveTo(...a);c.lineTo(...b);c.strokeStyle=col;c.lineWidth=w;c.stroke()}
+let textOpacity=1;
+function txt(c,s,x,y,size=40,col=C.ink,align='left'){c.save();c.globalAlpha*=textOpacity;c.font=`${size}px Bridge`;c.textBaseline='alphabetic';c.textAlign=align;c.fillStyle=col;c.fillText(s,x,y);c.restore()}
+function circle(c,x,y,r,col){c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle=col;c.fill()}
+function arrow(c,a,b,col=C.hot,w=4){line(c,a,b,col,w);let ang=Math.atan2(b[1]-a[1],b[0]-a[0]),r=15;path(c,[b,[b[0]-r*Math.cos(ang-.5),b[1]-r*Math.sin(ang-.5)],[b[0]-r*Math.cos(ang+.5),b[1]-r*Math.sin(ang+.5)]],col)}
+function shade(hex,m){let n=parseInt(hex.slice(1),16);return '#'+[n>>16&255,n>>8&255,n&255].map(v=>Math.round(clamp(v*m,0,255)).toString(16).padStart(2,'0')).join('')}
+// Affine camera with actual xyz geometry. Camera depth is independent of screenheight.
+function camera(ox,oy,s,yaw=-.28,pitch=.51){const ca=Math.cos(yaw),sa=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);return p=>{let u=p[0]*ca-p[1]*sa,v=p[0]*sa+p[1]*ca;return[ox+u*s,oy+(v*sp-p[2]*cp)*s,v*cp+p[2]*sp]}}
+function World(c,P){this.faces=[];this.P=P;this.c=c;this.face=(pts,col)=>{if(pts.length!==4){this.faces.push({pts,col});return}const dist=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i])),nx=Math.max(1,Math.ceil(dist(pts[0],pts[1])/.5)),ny=Math.max(1,Math.ceil(dist(pts[0],pts[3])/.5)),get=(u,v)=>pts[0].map((_,k)=>mix(mix(pts[0][k],pts[1][k],u),mix(pts[3][k],pts[2][k],u),v));for(let i=0;i<nx;i++)for(let j=0;j<ny;j++)this.faces.push({pts:[get(i/nx,j/ny),get((i+1)/nx,j/ny),get((i+1)/nx,(j+1)/ny),get(i/nx,(j+1)/ny)],col})};this.box=(x,y,z,w,d,h,col)=>{const p=[[x,y,z],[x+w,y,z],[x+w,y+d,z],[x,y+d,z],[x,y,z+h],[x+w,y,z+h],[x+w,y+d,z+h],[x,y+d,z+h]];[[[0,1,5,4],.77],[[1,2,6,5],.90],[[2,3,7,6],.69],[[3,0,4,7],.82],[[4,5,6,7],1.07]].forEach(([f,k])=>this.face(f.map(i=>p[i]),shade(col,k)))};this.draw=()=>{this.faces.map(f=>({...f,p:f.pts.map(P)})).sort((a,b)=>a.p.reduce((s,p)=>s+p[2],0)/a.p.length-b.p.reduce((s,p)=>s+p[2],0)/b.p.length).forEach(f=>path(c,f.p.map(p=>p.slice(0,2)),f.col,f.col,.65));}}
+function bridgeGeometry(w,ext=0,carx=null,land=true){const left=-6,end=5.22+.18*ext,right=5.5;
+ if(land){w.box(-10,-4,-1,20,8,.2,C.cool);w.box(-10,-4,-.8,3.8,8,.3,C.sand);w.box(6,-4,-.8,4,8,.3,C.sand);for(let x of[-8.7,-7.5,7.6,9]){w.box(x,2.7,-.5,.11,.11,1.15,'#685B3B');w.box(x-.22,2.48,.3,.55,.55,.7,'#69785E')}}
+ w.box(-10,-1.5,-.8,4,3,3.54,'#B4A58C');w.box(-10,-1.5,2.74,4,3,.04,C.road);for(let x of[-5.7,3.8]){w.box(x,-1,-.8,.65,2,2.75,'#B4A58C');w.box(x-.32,-1.25,1.95,1.3,2.5,.23,'#CBBCA1');w.box(x-.10,-.9,2.18,.85,1.8,.18,C.dark)}
+ w.box(left,-1.5,2.36,end-left,3,.38,C.cream);w.box(left,-1.5,2.74,end-left,3,.04,C.road);
+ w.box(right,-1.5,-.8,4,3,3.16,'#B4A58C');w.box(right,-1.5,2.36,4,3,.38,C.cream);w.box(right,-1.5,2.74,4,3,.04,C.road);
+ w.box(end-.10,-1.5,2.78,.10,3,.08,C.steel);w.box(right,-1.5,2.78,.10,3,.08,C.steel);
+ // One simplified flexible strip seal spanning the opening, folded below roadlevel.
+ for(let y=-1.5;y<1.49;y+=.25)w.face([[end,y,2.77],[(end+right)/2,y,2.51],[right,y,2.77],[right,y+.25,2.77],[(end+right)/2,y+.25,2.51],[end,y+.25,2.77]],'#283A3C');
+ for(let x=left+.2;x<end-.4;x+=1.45)w.box(x,-.045,2.785,.7,.09,.007,C.cream);
+ for(let x=right+.3;x<9;x+=1.45)w.box(x,-.045,2.785,.7,.09,.007,C.cream);
+ for(let y of[-1.48,1.39]){for(let x=left+.15;x<end-.1;x+=1.0)w.box(x,y,2.78,.055,.055,.55,C.steel);w.box(left,y,3.28,end-left,.07,.07,C.steel);w.box(right,y,3.28,3.5,.07,.07,C.steel)}
+ if(carx!==null){w.box(carx,-.95,2.86,1.12,.62,.28,C.hot);w.box(carx+.2,-.88,3.14,.65,.48,.27,C.cream);w.box(carx+.72,-.885,3.17,.13,.49,.18,C.cool);for(let x of[carx+.19,carx+.86])for(let y of[-1.01,-.4])w.box(x,y,2.78,.19,.12,.25,C.dark)}
+ return {left,end,right,gap:right-end};}
+function label(c,text,p,offset,col=C.ink,size=30){let q=[p[0]+offset[0],p[1]+offset[1]];line(c,p,q,col,2);circle(c,p[0],p[1],5,col);txt(c,text,q[0],q[1]-12,size,col,offset[0]<0?'right':'left')}
+function title(c,a,b,y=110){txt(c,a,90,y,72);if(b)txt(c,b,94,y+62,34)}
+function footer(c,extra=''){txt(c,extra||'温度作用简化示意 · 变形放大、过程加速',90,1032,25);txt(c,'ui2v / 原创科普',1830,1032,24,C.ink,'right')}
+function heat(t,start,len){return smooth((t-start)/len)}
+function scene(c,t,n){c.fillStyle=C.sand;c.fillRect(0,0,1920,1080);
+ if(n===0){title(c,'桥面，为什么故意留一道缝？','不是裂纹，而是为变化留下的空间。');const P=camera(930,670,77,-.22,.65),w=new World(c,P);const geom=bridgeGeometry(w,0,mix(-5,7,clamp((t-.3)/4.4)));w.draw();const q=P([(geom.end+geom.right)/2,0,2.8]);label(c,'伸缩装置',q,[-80,-210],C.ink,37);const a=smooth((t-1.8)/.7);c.save();c.globalAlpha=a;c.fillStyle=C.sand;c.fillRect(0,919,1920,161);txt(c,'车轮经过，只是一瞬间',90,963,33);c.restore();}
+ else if(n===1){title(c,'温度变了，桥段长度也会变','看同一端：桥台不动，桥段端部移动。',100);const q=heat(t,6.2,3.5),cold=heat(t,6.2,3.5);for(let i=0;i<2;i++){let y=i?820:490;let ext=i?mix(0,-.25,cold):mix(0,.65,q);let P=camera(1000,y,72,0,.12),w=new World(c,P);let end=4.4+ext,right=5.5;w.box(-5.7,-.5,-.8,.6,1,2.9,'#B4A58C');w.box(3.8,-.5,-.8,.6,1,2.9,'#B4A58C');w.box(-5.8,-.5,2.1,.8,1,.2,C.dark);w.box(3.65,-.5,2.1,1.1,1,.2,C.dark);w.box(-6,-.8,2.3,end+6,1.6,.4,i?C.cool:C.hot);w.box(right,-.8,-.8,2,1.6,3.5,'#B4A58C');w.draw();const x=P([end,0,2.7])[0],xr=P([right,0,2.7])[0],yy=P([end,0,2.7])[1];c.setLineDash([8,8]);line(c,P([4.4,0,3.3]),P([4.4,0,-.5]),'#8A806C',2);c.setLineDash([]);line(c,[x,yy-48],[xr,yy-48],C.ink,3);line(c,[x,yy-61],[x,yy-35],C.ink,3);line(c,[xr,yy-61],[xr,yy-35],C.ink,3);txt(c,i?'降温':'升温',90,y-120,50,i?C.cool:C.hot);txt(c,i?'缩短 → 缝变宽':'伸长 → 缝变窄',90,y-60,37);arrow(c,[1100,yy-58], [1100+(i?-1:1)*(50+70*(i?cold:q)),yy-58],i?C.cool:C.hot,5);txt(c,'桥台',xr+38,yy+95,32);label(c,'固定端',P([-5.45,0,2.2]),[55,105],C.ink,28);}
+ footer(c);return;}
+ else if(n===2){title(c,'缝在伸缩，支座也要允许位移','一种装置的局部剖面；并非施工图。',105);const u=.5-.5*Math.cos((t-15)/7.7*Math.PI*2),end=4.4+.65*u;let P=camera(265,870,155,-.18,.32),w=new World(c,P); // Tight coherent cutaway: simplified endzone and fixed abutment.
+ w.box(1,-1.3,2.3,end-1,1.65,.5,C.hot);w.box(1,-1.3,2.8,end-1,1.65,.06,C.road);w.box(5.5,-1.3,0,1.7,2.6,2.8,'#B4A58C');w.box(5.5,-1.3,2.8,1.7,2.6,.06,C.road);w.box(end-.12,-1.3,2.86,.12,2.6,.12,C.steel);w.box(5.5,-1.3,2.86,.12,2.6,.12,C.steel);
+ // Seal as continuous extruded foldedpolyline, same endpoints as slabs.
+ for(let j=0;j<18;j++){let a=-1.3+j*2.6/18,b=a+2.6/18;w.face([[end,a,2.87],[(end+5.5)/2,a,2.49],[5.5,a,2.87],[5.5,b,2.87],[(end+5.5)/2,b,2.49],[end,b,2.87]],shade(C.dark,1+j%2*.06))}
+ w.box(3.1,-.75,0,1.1,1.5,1.75,'#B4A58C');w.box(2.95,-.9,1.75,1.45,1.8,.18,C.steel);w.box(3.05+.65*u,-.8,1.93,.9,1.6,.18,C.dark);w.box(3.0+.65*u,-.85,2.11,1.0,1.7,.19,C.steel);w.draw();label(c,'柔性密封随开口变形',P([(end+5.5)/2,0,2.55]),[100,-205],C.ink,34);label(c,'桥台保持位置',P([6.2,1.3,1.1]),[180,65],C.ink,32);label(c,'滑动支座允许水平位移',P([3.5+.65*u,.85,2.05]),[-230,160],C.ink,34);const a=P([3.2, .95,1.93]),b=P([4.1,.95,1.93]);arrow(c,[a[0],a[1]+40],[b[0],b[1]+40],C.hot,4);arrow(c,[b[0],b[1]+72],[a[0],a[1]+72],C.cool,4);footer(c,'一种装置示意 · 支座与接缝协调移动 · 变形放大');return;}
+ else{title(c,'桥不是不动，而是让变化有去处','伸缩缝 + 可移动支承，让温度位移有余量。',105);let P=camera(930,670,77,-.22,.65),w=new World(c,P),e=.25+.35*Math.sin((t-23.4)*.8);const geom=bridgeGeometry(w,e,mix(-5,4,clamp((t-23.4)/5.7)));w.draw();label(c,'为桥段伸缩留余量',P([(geom.end+geom.right)/2,0,2.9]),[-170,-220],C.ink,37);c.fillStyle=C.sand;c.fillRect(0,912,1920,168);txt(c,'实际还考虑收缩、徐变等；部分桥采用无缝构造。',90,962,32);}
+ footer(c);}
+const transitionBuffers=new WeakMap();
+function render(c,t){t=clamp(t,0,D);c.save();c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.lineCap='round';c.lineJoin='round';c.setLineDash([]);const starts=[0,4.8,14.8,23.4];let n=starts.filter(s=>t>=s).length-1;textOpacity=n>0&&t<starts[n]+.65?smooth((t-starts[n]-.325)/.325):1;scene(c,t,n);if(n>0&&t<starts[n]+.65){let buf=transitionBuffers.get(c.canvas);if(!buf){buf=typeof document!=='undefined'?document.createElement('canvas'):new c.canvas.constructor(1920,1080);buf.width=1920;buf.height=1080;transitionBuffers.set(c.canvas,buf)}const bc=buf.getContext('2d');bc.setTransform(1,0,0,1,0,0);bc.globalAlpha=1;bc.lineCap='round';bc.lineJoin='round';bc.setLineDash([]);textOpacity=1-smooth((t-starts[n])/.325);scene(bc,starts[n]-.001,n-1);c.save();c.globalAlpha=1-smooth((t-starts[n])/.65);c.drawImage(buf,0,0);c.restore()}textOpacity=1;if(t<.7){c.fillStyle=C.sand;c.globalAlpha=1-smooth(t/.7);c.fillRect(0,0,1920,1080)}c.restore()}
+const api={render,D,camera,bridgeGeometry};if(typeof module!=='undefined')module.exports=api;root.BridgeFilm=api;
+})(typeof window!=='undefined'?window:globalThis);
