@@ -1,0 +1,81 @@
+{
+  "name": "through-one-point",
+  "type": "hyperframes:block",
+  "title": "光没拐弯，像怎么倒了？",
+  "description": "27秒小孔成像科普：用三维茶壶、暗箱剖面、被箱壁挡住的偏轴光线与穿孔直线光路，解释上下与左右倒像。均匀介质几何光学示意，非等比例，不模拟衍射与曝光。原创音效与中文图示。来源：ANU Make a pinhole camera https://science.anu.edu.au/engagement/science-lab-experiments-home-school/make-pinhole-camera；MIT Vision Book https://visionbook.mit.edu/imaging.html；详见 SOURCES.md。",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 27,
+  "tags": [
+    "science",
+    "optics",
+    "pinhole",
+    "chinese",
+    "canvas",
+    "3d"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "target": "compositions/through-one-point/index.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "film.js",
+      "target": "compositions/through-one-point/film.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/FONT-OFL.txt",
+      "target": "compositions/through-one-point/assets/FONT-OFL.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-LICENSE.txt",
+      "target": "compositions/through-one-point/assets/GSAP-LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/GSAP-UPSTREAM-README.md",
+      "target": "compositions/through-one-point/assets/GSAP-UPSTREAM-README.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/gsap.min.js",
+      "target": "compositions/through-one-point/assets/gsap.min.js",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/pinhole.ttf",
+      "target": "compositions/through-one-point/assets/pinhole.ttf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/score.mp3",
+      "target": "compositions/through-one-point/assets/score.mp3",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "LICENSE.txt",
+      "target": "compositions/through-one-point/LICENSE.txt",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "target": "compositions/through-one-point/THIRD_PARTY.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "SOURCES.md",
+      "target": "compositions/through-one-point/SOURCES.md",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "README.md",
+      "target": "compositions/through-one-point/README.md",
+      "type": "hyperframes:asset"
+    }
+  ]
+}
