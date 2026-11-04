@@ -1,0 +1,18 @@
+{
+  "name": "ui2v-frame-orchestra",
+  "type": "hyperframes:block",
+  "title": "UI2V 首页背景 · 精密编排",
+  "description": "UI2V 首页首屏背景：主体在两侧边缘运动，中间为标题、标签与安装命令留白。",
+  "dimensions": {
+    "width": 1920,
+    "height": 480
+  },
+  "duration": 12,
+  "fps": 30,
+  "files": [
+    {
+      "path": "index.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}
